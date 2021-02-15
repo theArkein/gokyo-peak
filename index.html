@@ -342,8 +342,9 @@
                          </div>
                     </div>
                </div>
-           </div>
+          </div>
      </section>
+
      <section class="client-reviews">
           <h2 class="section-title">
                Client Reviews
@@ -911,11 +912,11 @@
                          <div class="wrapper">
                               <div class="input">
                                    <label for="password">Password</label>
-                                   <input type="text" name="password" id="password" placeholder="password">
+                                   <input type="password" name="password" id="password" placeholder="password">
                               </div>
                               <div class="input">
                                    <label for="confrim-password">Confirm Password</label>
-                                   <input type="text" name="confrim-password" id="confrim-password" placeholder="confirm password">
+                                   <input type="password" name="confrim-password" id="confrim-password" placeholder="confirm password">
                               </div>
                          </div>
                          <div class="next">
@@ -927,149 +928,63 @@
           <p class="alternate">Already have an account: <a href="#" onclick="showPopUp('signin')">signin</a></p>
      </section>
      </div>
-     <footer>
-          <div class="top">
-          <img src="images/footer/footer-image.png" alt="">
+<footer>
+     <div class="top">
+          <div class="menu-links links">
+               <h3>Important Links</h3>
+               <ul>
+                    <li><a href="#">Home</li>
+                    <li><a href="#">Book FLights</a></li>
+                    <li><a href="#">Book Vehicles</a></li>
+                    <li><a href="#">Book Rooms</a></li>
+                    <li><a href="#">See Packages</a></li>
+               </ul>
           </div>
-          <div class="bottom flex align-center justify-center">© 2021, GOKYO PEAK TRAVELS & TOURS  |  ALL RIGHTS RESERVED  |  DESIGN AND DEVELOP BY: Lightweb Group</div>
-     </footer>
+          <div class="packages-links links">
+               <h3>Trending Packages</h3>
+               <ul>
+                    <li><a href="#">Bunjee Jump</li>
+                    <li><a href="#">Annapurna Trekking</a></li>
+                    <li><a href="#">Jungle Safari</a></li>
+                    <li><a href="#">Paragliding</a></li>
+                    <li><a href="#">Lake Rara</a></li>
+               </ul>
+          </div>
+          <div class="about-us">
+               <h3>About Us</h3>
+               <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+               </p>
+          </div>
+          <div class="contact">
+               <div class="details">
+                    <h3>Contact Details</h3>
+                    <p>
+                         <div><i class="fa fa-map-marker"></i><span>Address: Baneshwor, Kathmandu</span></div>
+                         <div><i class="fa fa-phone"></i><span>Phone: 01-9876548, 01-947464</span></div>
+                         <div><i class="fa fa-envelope"></i><span>Email: gokyo@gmail.com</span></div>
+                    </p>
+               </div>
+               <div class="social">
+                    <h3>Get Connected On</h3>
+                    <p>
+                         <a href=""><img src="./images/social-icons/facebook.png"></a>
+                         <a href=""><img src="./images/social-icons/instagram.png"></a>
+                         <a href=""><img src="./images/social-icons/youtube.png"></a>
+                    </p>
+               </div>
+          </div>
+          <img src="images/footer/footer-image.png" alt="">
+     </div>
+     <div class="bottom flex align-center justify-center">© 2021, GOKYO PEAK TRAVELS & TOURS  |  ALL RIGHTS RESERVED  |  DESIGN AND DEVELOP BY: Lightweb Group</div>
+</footer>
 <script src="js/jquery.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
-<script>
-     $(document).ready(function(){
-          $(".banner.owl-carousel").owlCarousel({
-               loop:true,
-               items:1,
-               nav:true,
-               dots:true,
-               dotsContainer: '.dots',
-               navContainer: '.nav',
-               autoplay: true,
-               autoplayTimeout: 5000,
-               autoplayHoverPause: true,
-          });
-          let couponCarousel = {
-               class: ".hot-deals", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    dots:true,
-                    autoWidth: true,
-                    margin: 35
-               }
-          }
-          let destinationsCarousel = {
-               class: ".popular-destinations", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    dots:true,
-                    autoWidth: true,
-                    margin: 35
-               }
-          }
-          let adventureCarousel = {
-               class: ".exciting-adventures", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    dots:true,
-                    autoWidth: true,
-                    margin: 35
-               }
-          }
-          let clientReviewsCarousel = {
-               class: ".client-reviews", 
-               options: {
-                    loop:true,
-                    items:1,
-                    nav:true,
-                    dots:true,
-                    margin: 20
-               }
-          }
-          let trendingTrips = {
-               class: ".trending-trips", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    autoWidth: true,
-                    margin: 35
-               }
-          }
-
-          let carousels = [couponCarousel, destinationsCarousel, adventureCarousel, clientReviewsCarousel, trendingTrips]
-
-          carousels.forEach(item=>{
-               let carousel = $(`${item.class} .owl-carousel`)
-               carousel.owlCarousel(item.options);
-               carousel.on('mousewheel', '.owl-stage', function (e) {
-               if (e.deltaY<0) {
-                    carousel.trigger('next.owl');
-               } else {
-                    carousel.trigger('prev.owl');
-               }
-               e.preventDefault();
-          });
-          })
-     });
-</script>
 <script src="./js/main.js"></script>
 <script src="./js/jquery.mousewheel.js"></script>
 <script src="https://kit.fontawesome.com/b5b791cd78.js" crossorigin="anonymous"></script>
-<script type="text/javascript">
-     function showFormStep (event,name){
-          let processStep = event.currentTarget;
-          document.querySelectorAll('.process-step').forEach(item=>{
-             item.classList.remove('active')
-         })
-          processStep.classList.add('active')
-         document.querySelectorAll('.form-steps').forEach(item=>{
-             item.classList.remove('active')
-         })
-         const formSteps = document.querySelectorAll('.form-steps .form-step')
-         const showStep = document.querySelector('.'+name)
-         formSteps.forEach(element => {
-             element.classList.remove('show')
-         });
-             showStep.classList.add('show')
-
-     }
-
-     const showPopUp = (name)=>{
-          let popUp = document.querySelector(`.pop-up.${name}`)
-          document.querySelectorAll(`.pop-up`).forEach(element=>{
-               element.classList.remove('show')
-
-          })
-          popUp.classList.add('show')
-     }
-
-     const hidePopUp = (name)=>{
-          let popUp = document.querySelector(`.pop-up.${name}`)
-          console.log(popUp)
-          popUp.classList.remove('show')
-     }
-     const uploadDocument = ()=>{
-          const selectedDocument = document.getElementById("document").value;
-          const documentForm = document.querySelectorAll('.upload-document')
-          console.log(selectedDocument,documentForm)
-          
-          if(selectedDocument=="none"){
-               documentForm[0].classList.remove('show')
-               documentForm[1].classList.remove('show')
-          }
-          if(selectedDocument=="citizenship"){
-               documentForm[0].classList.add('show')
-               documentForm[1].classList.remove('show')
-          }
-          if(selectedDocument=="passport"){
-               documentForm[1].classList.add('show')
-               documentForm[0].classList.remove('show')
-          }
-     }
-     uploadDocument()
-
-</script>
 </body>
 </html>

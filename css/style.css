@@ -617,16 +617,61 @@ header .menu a{
      font-weight: bolder;
      color: #555;
 }
-footer .top{
-     height: 360px;
+footer{
      background-color: var(--primary-light);
-     margin-top: 0;
      position: relative;
+     margin-top: 60px;
+     color: #fff;
+     width: 100%;
 }
-footer img{
+footer .social img{
+     width: 35px;
+     margin:4px 12px;
+}
+footer .top{
+     min-height: 360px;
+     margin-top: 0;
+     padding: 16px 20px 10px;
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     padding-bottom: 140px;
+     text-align: justify;
+}
+footer .top h3{
+     color: var(--primary);
+     font-weight:bold;
+}
+footer .top>div{
+     margin: 12px;
+}
+footer .top .about-us{
+     max-width: 500px;
+}
+footer .top .links li{
+     padding: 6px 0px;
+}
+footer li a:hover{
+     color: #555;
+}
+footer .top>div.contact {
+     width: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+}
+footer .contact .details div{
+     margin:5px;
+}
+footer i{
+     padding: 3px;
+     margin-right: 8px;
+}
+footer .top>img{
      width: 100%;
      position: absolute;
-     bottom: 0px;
+     bottom: 50px;
+     left: 0;
 }
 footer .bottom{
      height: 50px;
@@ -674,7 +719,7 @@ footer .bottom{
 .tabContent{
      padding: 20px;
      height: 360px;
-     overflow-Y: scroll;
+     overflow-Y: auto;
 }
 .tabContent>div{
      display: none;
@@ -786,6 +831,19 @@ footer .bottom{
      border-radius: 50%;
      object-fit: cover;
 }
+.recommended{
+     margin-top: 20px;
+}
+.recommended>div{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     margin-top: 12px;
+}
+.recommended>div>div{
+     margin:8px;
+}
+
 @media (max-width: 767px) {
      nav.hide{
           height: 0;
@@ -900,6 +958,10 @@ footer .bottom{
      .product .right{
           width: 460px;
      }
+     footer .top{
+          width: 80%;
+          margin:auto;
+     }
 }
 .pop-up .close{
      position: absolute;
@@ -917,17 +979,16 @@ footer .bottom{
 .pop-up{
      position: fixed;
      top:0;
-     height: 100%;
      width: 100%;
      z-index: +12;
      background-color: #2228;
      display: none;
+     height: 100%;
+     overflow: auto;
 }
 .pop-up.show{
      display: flex;
      justify-content: center;
-     align-items: center;
 }
-
 
 
