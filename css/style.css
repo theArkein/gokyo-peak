@@ -646,10 +646,14 @@ footer .top>div{
      margin: 12px;
 }
 footer .top .about-us{
-     max-width: 500px;
+     max-width: 360px;
+     font-size: 0.9em
 }
 footer .top .links li{
-     padding: 6px 0px;
+     padding: 3px 0px;
+}
+footer .links a{
+     font-size: 0.8em;
 }
 footer li a:hover{
      color: #555;
@@ -659,6 +663,7 @@ footer .top>div.contact {
      display: flex;
      flex-wrap: wrap;
      justify-content: space-between;
+     font-size: 0.9em;
 }
 footer .contact .details div{
      margin:5px;
@@ -677,9 +682,12 @@ footer .bottom{
      height: 50px;
      background-color: var(--primary);
      color: #fff;
-     font-size: 0.5em;
+     font-size: 0.7em;
      bottom: 0;
      text-align: center;
+}
+footer .bottom span{
+     margin: auto 12px;
 }
 .product{
      margin-top: 80px;
