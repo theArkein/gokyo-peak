@@ -1,0 +1,114 @@
+.signin-form, .signup-form{
+	max-width: 700px;
+	background-color: #fff;
+	padding: 12px 25px;
+	margin: 12px;
+	max-height: 600px;
+	overflow-y: auto;
+	position: relative;
+}
+.form-title{
+	color: #218BFD;
+	font-size: 2em;
+	text-align: center;
+}
+.head{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.head .title{
+	color: #218BFD;
+	font-size: 1em
+}
+.head .process-steps{
+	display: flex;
+	text-align: center
+}
+form{
+	max-width: 700px;
+	margin: auto;
+}
+.process-step{
+	text-align: center;
+	margin: 0 10px;
+	cursor: pointer;
+}
+.process-step .number{
+	background-color: #555;
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	line-height: 40px;
+	margin: auto;
+	margin-bottom: 8px;
+}
+.process-step span{
+	color: #555;
+	font-weight: bolder;
+}
+.process-step.active span{
+	color: #218BFD;
+}
+.process-step.active .number{
+	background-color: #218BFD;
+}
+.form-step{
+	display: none;
+	max-width: 700px;
+	margin: auto;
+}
+.form-step.show{
+	display: block
+}
+.step-title{
+	color: #218BFD;
+	font-size: 1.2em;
+	text-align:center;
+	margin-bottom: 0px;
+}
+.wrapper{
+	display: flex;
+	flex-wrap: wrap;
+}
+.input, .next{
+	display: flex;
+	flex-direction: column;
+	margin: 10px auto;
+	width: 320px
+}
+input,select {
+	padding: 10px 12px;
+	border: 1px solid #218BFD;
+}
+
+label{
+	margin-bottom: 3px;
+}
+input[type=button],input[type=submit]{
+	background-color: #218BFD;
+	color: #fff;
+	font-size: 1.2em;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+}
+.upload-document{
+	display: none;
+}
+
+.upload-document.show{
+	display: block;
+}
+.alternate {
+	text-align: center;
+}
+
+.alternate a{
+	color: #218BFD;
+	font-weight: bolder;
+	text-decoration: none;
+}
