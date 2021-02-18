@@ -1027,11 +1027,13 @@ footer .bottom span{
      background-color: var(--primary);
      margin: 10px 0px;
 }
-.booking-fixed-icons .parent{
+.booking-fixed-icons .book-item:hover{
+     background-color: var(--primary-light)
 }
 .booking-fixed-icons .parent:hover .children{
      display: block;
 }
+
 .booking-fixed-icons .parent .children{
      display: none;
      position: relative;
