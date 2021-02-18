@@ -28,84 +28,6 @@ function showTab (event,name){
      newTab.classList.add('show')
 }
 
-$(document).ready(function(){
-          $(".banner.owl-carousel").owlCarousel({
-               loop:true,
-               items:1,
-               nav:true,
-               dots:true,
-               dotsContainer: '.dots',
-               navContainer: '.nav',
-               autoplay: true,
-               autoplayTimeout: 5000,
-               autoplayHoverPause: true,
-          });
-          let couponCarousel = {
-               class: ".hot-deals", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    dots:true,
-                    autoWidth: true,
-                    margin: 35
-               }
-          }
-          let destinationsCarousel = {
-               class: ".popular-destinations", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    dots:true,
-                    autoWidth: true,
-                    margin: 35
-               }
-          }
-          let adventureCarousel = {
-               class: ".exciting-adventures", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    dots:true,
-                    autoWidth: true,
-                    margin: 35
-               }
-          }
-          let clientReviewsCarousel = {
-               class: ".client-reviews", 
-               options: {
-                    loop:true,
-                    items:1,
-                    nav:true,
-                    dots:true,
-                    margin: 20
-               }
-          }
-          let trendingTrips = {
-               class: ".trending-trips", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    autoWidth: true,
-                    margin: 35
-               }
-          }
-
-          let carousels = [couponCarousel, destinationsCarousel, adventureCarousel, clientReviewsCarousel, trendingTrips]
-
-          carousels.forEach(item=>{
-               let carousel = $(`${item.class} .owl-carousel`)
-               carousel.owlCarousel(item.options);
-               carousel.on('mousewheel', '.owl-stage', function (e) {
-               if (e.deltaY<0) {
-                    carousel.trigger('next.owl');
-               } else {
-                    carousel.trigger('prev.owl');
-               }
-               e.preventDefault();
-          });
-          })
-     });
-
  function showFormStep (event,name){
           let processStep = event.currentTarget;
           document.querySelectorAll('.process-step').forEach(item=>{
@@ -135,14 +57,12 @@ function showPopUp(name){
 
 const hidePopUp = (name)=>{
      let popUp = document.querySelector(`.pop-up.${name}`)
-     console.log(popUp)
      popUp.classList.remove('show')
 }
 
 const uploadDocument = ()=>{
      const selectedDocument = document.getElementById("document").value;
      const documentForm = document.querySelectorAll('.upload-document')
-     console.log(selectedDocument,documentForm)
      
      if(selectedDocument=="none"){
           documentForm[0].classList.remove('show')

@@ -513,7 +513,12 @@ header .menu a{
      font-size: 0.7em;
 }
 .client-reviews .review{
-     background-color: var(--primary-light);
+     /*background-color: var(--primary-light);*/
+     background-image: url("../images/review-bg.jpg");
+     background-color: #000b;
+     background-blend-mode: multiply;
+     background-position:right;
+     background-size: cover;
      color: #fff;
      display: flex;
      flex-direction: column;
@@ -567,6 +572,7 @@ header .menu a{
 .review .product {
      font-weight: lighter;
      font-size: 0.6em;
+     margin: 8px 0px;
 }
 .why-us .items{
      display: flex;
@@ -999,4 +1005,40 @@ footer .bottom span{
      justify-content: center;
 }
 
+.booking-fixed-icons{
+     color: #fff;
+     font-size: 10px;
+     cursor: pointer;
+     position: fixed;
+     bottom: 50px;
+     right: 20px;
+     z-index: 5;
+}
+.booking-fixed-icons .head, 
+.booking-fixed-icons .book-item{
+     width: 65px;
+     height: 65px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     text-align: center;
+     align-items: center;
+     border-radius: 50%;
+     background-color: var(--primary);
+     margin: 10px 0px;
+}
+.booking-fixed-icons .parent{
+}
+.booking-fixed-icons .parent:hover .children{
+     display: block;
+}
+.booking-fixed-icons .parent .children{
+     display: none;
+     position: relative;
+}
+
+.booking-fixed-icons .parent .children i{
+     font-size: 16px;
+     padding: 6px;
+}
 

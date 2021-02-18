@@ -4,7 +4,6 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Gokyo Peak Travels & Tours</title>
-     <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
      <link rel="stylesheet" href="css/style.css">
      <link rel="stylesheet" type="text/css" href="css/forms.auth.css"/>
 </head>
@@ -271,32 +270,43 @@
                     </div>
                 </div>
          </div>
-     </section>     
+     </section>    
 
-
-
-      <div class="pop-up signin">
-          <section class="signin-form">
-               <form action="#">
-                    <h3 class="form-title">Signin</h3>
-                    <div class="close" onclick="hidePopUp('signin')">X</div>
-                    <div class="input">
-                         <label for="email">Email</label>
-                         <input type="text" id="email" name="email" placeholder="email"> 
-                    </div>
-                    <div class="input">
-                          <label for="password">Password</label>
-                         <input type="password" id="password" name="password" placeholder="pasword"> 
-                    </div>
-                    <div class="input">
-                         <input type="submit" name="submit" value="Signin">
-                    </div>
-               </form>
-               <p class="alternate">Dont have an account: <a href="#" onclick="showPopUp('signup')">signup</a></p>
-          </section>
+     <div class="booking-fixed-icons">
+          <div class="parent">
+               <div class="children">
+                    <a href="book.html" class="book-item"><i class="fa fa-plane"></i><span>Flights</span></a>
+                    <a href="book.html" class="book-item"><i class="fa fa-taxi"></i><span>Vehicles</span></a>
+                    <a href="book.html" class="book-item"><i class="fa fa-hotel"></i><span>Hotels</span></a>
+                    <a href="book.html" class="book-item"><i class="fa fa-hiking"></i><span>Holidays</span></a>
+               </div>
+               <div class="head">Book<br>Now</div>
+          </div>
      </div>
-     <div class="pop-up signup">
-          <section class="signup-form">
+     
+<div class="pop-up signin">
+     <section class="signin-form">
+          <form action="#">
+               <h3 class="form-title">Signin</h3>
+               <div class="close" onclick="hidePopUp('signin')">X</div>
+               <div class="input">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="email"> 
+               </div>
+               <div class="input">
+                     <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="pasword"> 
+               </div>
+               <div class="input">
+                    <input type="submit" name="submit" value="Signin">
+               </div>
+          </form>
+          <p class="alternate">Dont have an account: <a href="#" onclick="showPopUp('signup')">signup</a></p>
+     </section>
+</div>
+
+<div class="pop-up signup">
+     <section class="signup-form">
           <form action="#">
                <h3 class="form-title">Signup</h3>
                <div class="close" onclick="hidePopUp('signup')">X</div>     
@@ -702,7 +712,7 @@
           </form>
           <p class="alternate">Already have an account: <a href="#" onclick="showPopUp('signin')">signin</a></p>
      </section>
-     </div>
+</div>
 
 
 <footer>
@@ -759,9 +769,6 @@
      <div class="bottom flex align-center justify-center"><span>© 2021, GOKYO PEAK TRAVELS & TOURS</span>  |  <span>ALL RIGHTS RESERVED</span>  |  <span>Design & Developed By: Lightweb Group</span></div>
 </footer>
 </body>
-<script src="js/jquery.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
 <script src="./js/main.js"></script>
-<script src="./js/jquery.mousewheel.js"></script>
 <script src="https://kit.fontawesome.com/b5b791cd78.js" crossorigin="anonymous"></script>
 </html>
