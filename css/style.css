@@ -85,6 +85,12 @@ a{
 .align-center{
      align-items: center;
 }
+
+.message.error{
+     color: red;
+     text-align: center;
+     display: none;
+}
 header{
      background-color: var(--primary);
      color: #fff;
@@ -209,25 +215,37 @@ header .menu a{
      z-index: +4;
      position: relative;
      top: 5px;
-     border: 1px solid rgb(212, 212, 212);
+     display: flex;
+     flex-direction: column;
 }
 .bookings .items{
-     padding: 5px 10px;
-     color: #222;
+     color: #fff;
      flex-wrap: wrap;
-     width: 100%;
-     border: 1px solid rgb(212, 212, 212);
+     background-color: var(--primary-light);
 }
 .bookings .item{
-     min-width: 80px;
-     padding: 8px;
+     min-width: 160px;
+    display: flex;
+    align-items: center;
+     padding: 12px 20px;
      margin-right: 10px;
      cursor: pointer;
+}
+.bookings .item.active{
+     background-color: var(--primary);
 }
 .bookings .item i{
      color: var(--primary);
      margin-right: 8px;
      transition: transfrom 0.3s;
+     background-color: #fff;
+     padding: 4px;
+     border-radius: 50%;
+     height: 26px;
+     width: 26px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }
 
 .bookings .item:hover i{
@@ -243,6 +261,7 @@ header .menu a{
 }
 .bookingForms {
      padding: 10px 20px;
+     border: 1px solid #eee;
 }
 .bookings .bookingForms>div{
      display: none;
@@ -1044,3 +1063,39 @@ footer .bottom span{
      padding: 6px;
 }
 
+
+
+
+/*Profile Page*/
+.profile-content {
+     margin-top: 100px;
+}
+
+.profile-content .tabs{
+     display: flex;
+     flex-wrap: wrap;
+}
+
+.profile-content .tabs .tab{
+     margin: auto 24px;
+     padding: 12px;
+     cursor: pointer;
+}
+
+.profile-content .tabContent{
+     height: auto;
+}
+
+.profile-content .tabs .tab.active{
+     border-bottom: 2px solid var(--primary)
+}
+
+.profile-content .detail .input{
+     min-width: 200px
+     margin: 12px;
+}
+
+.profile-content .detail form {
+     display: flex;
+     flex-wrap: wrap;
+}

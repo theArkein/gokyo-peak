@@ -5,9 +5,13 @@ hamburger.onclick = ()=>{
      menu.classList.toggle('hide')
 }
 
-const showForm = (name)=>{
+const showForm = (tab,name)=>{
      const forms = document.querySelectorAll('.bookingForms>div')
      const newForm = document.querySelector('.'+name)
+     document.querySelectorAll('.item').forEach(item=>{
+          item.classList.remove('active')
+     })
+     document.querySelectorAll('.item')[tab].classList.add('active')
      forms.forEach(element => {
           element.classList.remove('show')
      });
@@ -61,7 +65,7 @@ const hidePopUp = (name)=>{
 }
 
 const uploadDocument = ()=>{
-     const selectedDocument = document.getElementById("document").value;
+     const selectedDocument = document.getElementById("reference_doc_type").value;
      const documentForm = document.querySelectorAll('.upload-document')
      
      if(selectedDocument=="none"){
