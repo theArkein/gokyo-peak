@@ -24,9 +24,9 @@
                     <li><a href="#">Vehicles</a></li>
                     <li><a href="#">Rooms</a></li>
                     <li><a href="#">Destinations</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
                     <li><a href="#" class="btn" onclick="showPopUp('signin')">Signin</a></li>
-                    <li><a href="#" class="btn" onclick="showPopUp('signup')">Signup</a></li>
+                    <li><a href="#" class="btn" onclick="showPopUp('signup')" style="background: var(--primary-light); color: #fff">Signup</a></li>
 
               </ul>
               <div class="action">
@@ -34,9 +34,9 @@
           </nav>
      </header>
 
-     <div class="banner">
+     <div class="banner-wrapper">
           <div class="banner owl-carousel">
-               <div class="">
+               <!-- <div class="">
                     <img class="banner-image" style="background-image:url('./images/banner-a.jpg')" alt="">
                     <div class="banner-details">
                         <div class="title">
@@ -67,7 +67,7 @@
                          <p class="tag">Starting from $999</p>
                         <a href="#exciting-adventures" class="btn">See All</a>
                      </div>
-               </div>
+               </div> -->
           </div>
           <div class="dots"></div>
      </div>
@@ -359,39 +359,6 @@
                               </div>
                          </div>
                     </div>
-                    <div class="review">
-                         <p class="quote"><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium omnis culpa quidem commodi corporis temporibus et possimus nesciunt id laboriosam deserunt totam sapiente amet, voluptatum illo tenetur dolor pariatur debitis! <i class="fas fa-quote-right"></i></p>
-                         <div class="profile flex align-center">
-                              <img class="picture" src="./images/client-a.jpg" alt="">
-                              <div class="details">
-                                   <div class="name">Henry Gusswing</div>
-                                   <div class="profession">Photographer</div>
-                                   <div class="product">Annapurna Base Camp - 20 Days</div>
-                              </div>
-                         </div>
-                    </div>
-                    <div class="review">
-                         <p class="quote"><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium omnis culpa quidem commodi corporis temporibus et possimus nesciunt id laboriosam deserunt totam sapiente amet, voluptatum illo tenetur dolor pariatur debitis! <i class="fas fa-quote-right"></i></p>
-                         <div class="profile flex align-center">
-                              <img class="picture" src="./images/client-a.jpg" alt="">
-                              <div class="details">
-                                   <div class="name">Henry Gusswing</div>
-                                   <div class="profession">Photographer</div>
-                                   <div class="product">Annapurna Base Camp - 20 Days</div>
-                              </div>
-                         </div>
-                    </div>
-                    <div class="review">
-                         <p class="quote"><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium omnis culpa quidem commodi corporis temporibus et possimus nesciunt id laboriosam deserunt totam sapiente amet, voluptatum illo tenetur dolor pariatur debitis! <i class="fas fa-quote-right"></i></p>
-                         <div class="profile flex align-center">
-                              <img class="picture" src="./images/client-a.jpg" alt="">
-                              <div class="details">
-                                   <div class="name">Henry Gusswing</div>
-                                   <div class="profession">Photographer</div>
-                                   <div class="product">Annapurna Base Camp - 20 Days</div>
-                              </div>
-                         </div>
-                    </div>
                 </div>
           </div>
      </section>
@@ -507,11 +474,11 @@
                     <div class="message error">Error Here</div>
                     <div class="input">
                          <label for="email">Email</label>
-                         <input type="text" id="email" name="email" placeholder="email"> 
+                         <input type="text" id="email" name="email" value="hello12345@gokyo.com"> 
                     </div>
                     <div class="input">
                           <label for="password">Password</label>
-                         <input type="password" id="password" name="password" placeholder="pasword"> 
+                         <input type="password" id="password" name="password" value="nepal@123"> 
                     </div>
                     <div class="input">
                          <input type="submit" name="submit" value="Signin">
@@ -554,31 +521,31 @@
                               <div class="wrapper">
                                    <div class="input">
                                         <label for="first_name">First Name</label>
-                                        <input type="text" name="first_name" id="first_name" placeholder="eg: John">
+                                        <input type="text" name="first_name" id="first_name" value="John">
                                    </div>
                                    <div class="input">
                                         <label for="middle_name">First Name</label>
-                                        <input type="text" name="middle_name" id="first_name" placeholder="">
+                                        <input type="text" name="middle_name" id="first_name" value="">
                                    </div>
                                    <div class="input">
                                         <label for="last_name">Last Name</label>
-                                        <input type="text" name="last_name" id="last_name" placeholder="eg: Doe">
+                                        <input type="text" name="last_name" id="last_name" value="Doe">
                                    </div>
                                    <div class="input">
                                         <label for="username">Username</label>
-                                        <input type="text" name="username" id="username" placeholder="eg: Johndoe">
+                                        <input type="text" name="username" id="username" value="Johndoe">
                                    </div>
                                    <div class="input">
                                         <label for="gender">Gender</label>
                                         <select name="gender" id="gender">
                                           <option value="">Select Gender</option>
-                                          <option value="m">Male</option>
+                                          <option value="m" selected>Male</option>
                                           <option value="f">Female</option>
                                         </select>
                                    </div>
                                    <div class="input">
                                         <label for="dob">DOB:</label>
-                                        <input type="" id="dob" placeholder="DD-MM-YYYY" name="dob"> 
+                                        <input type="date" id="dob" name="dob" value="2000-02-12"> 
                                    </div>
                               </div>
                               <div class="next">
@@ -590,33 +557,33 @@
                               <div class="wrapper">
                                    <div class="input">
                                          <label for="email">Email</label>
-                                        <input type="text" id="email" name="email" placeholder="eg: johndoe@gmail.com"> 
+                                        <input type="text" id="email" name="email" value="johnndoe@gmail.com"> 
                                    </div>
                                    <div class="input">
                                         <label for="contact">Phone</label>
-                                        <input type="text" id="contact" name="contact" placeholder="eg: 9876543210">
+                                        <input type="text" id="contact" name="contact" value="9776543210">
                                    </div>
                                    <div class="input">
                                         <label for="street">Street</label>
-                                        <input type="text" id="street" name="street" placeholder="eg: 123 Main Street">
+                                        <input type="text" id="street" name="street" value="123 Main Street">
                                    </div>
                                    <div class="input">
                                         <label for="city">City</label>
-                                        <input type="text" id="city" name="city" placeholder="eg: New York City">
+                                        <input type="text" id="city" name="city" value="New York City">
                                    </div>
                                    <div class="input">
                                         <label for="state_region">State/Region</label>
-                                        <input type="text" id="state_region" name="state_region" placeholder="eg: New York">
+                                        <input type="text" id="state_region" name="state_region" value="New York">
                                    </div>
                                    <div class="input">
                                         <label for="postal_code">Postal Code</label>
-                                        <input type="text" id="postal_code" name="postal_code" placeholder="eg: 10030 ">
+                                        <input type="text" id="postal_code" name="postal_code" value="10030 ">
                                    </div>
                                    <div class="input">
                                         <label for="country">Country</label>
                                         <select id="country" name="country" class="form-control">
                                          <option value="">Select Country</option>
-                                         <option value="Nepal">Nepal</option>
+                                         <option value="Nepal" selected="">Nepal</option>
                                          <option value="Other">Other</option>
                                      </select>
                                    </div>
@@ -647,7 +614,7 @@
                                         </div>         
                                         <div class="input">
                                              <label for="ref_doc_number">Citizenship Number</label>
-                                             <input type="text" name="ref_doc_number" id="ref_doc_number" placeholder="eg: 58-76-04-8474">
+                                             <input type="text" name="ref_doc_number" id="ref_doc_number" value="58-76-04-8474">
                                         </div>
                                         <div class="input">
                                              <label for="citizenship-issue-date">Issue Date</label>
@@ -661,7 +628,7 @@
                                         </div>         
                                         <div class="input">
                                              <label for="passport-number">Passport Number</label>
-                                             <input type="text" name="passport-number" id="passport-number" placeholder="eg: 58-76-04-8474">
+                                             <input type="text" name="passport-number" id="passport-number" value="58-76-04-8474">
                                         </div>
                                         <div class="input">
                                              <label for="passport-expiry-date">Expiry Date</label>
@@ -675,14 +642,16 @@
                          </div>
                          <div class="form-step form-step-d">
                               <h3 class="step-title">Create Ceredentials</h3>
+                              <div class="message error">Error Here</div>
+
                               <div class="wrapper">
                                    <div class="input">
                                         <label for="password">Password</label>
-                                        <input type="password" name="password" id="password" placeholder="password">
+                                        <input type="password" name="password" id="password" value="password">
                                    </div>
                                    <div class="input">
                                         <label for="confrim-password">Confirm Password</label>
-                                        <input type="password" name="confrim-password" id="confrim-password" placeholder="confirm password">
+                                        <input type="password" name="confrim-password" id="confrim-password" value="password">
                                    </div>
                               </div>
                               <div class="next">
@@ -705,6 +674,20 @@
                </div>
                <div class="head">Book<br>Now</div>
           </div>
+     </div>
+
+     <div class="pop-up registered">
+          <section class="registered-popup">
+                  <div class="close" onclick="hidePopUp('registered')">X</div>
+                  <h3>Registered Successfully</h3>
+                  <span>Thankyou for registration</span>
+                    <span class="alternate">Please <a href="#" onclick="showPopUp('signin')">signin</a></span>
+
+          </section>
+     </div>
+
+     <div class="pop-up spinner">
+          <img src="./images/spinner.svg" alt="">           
      </div>
 
 <footer>
@@ -732,10 +715,6 @@
           <div class="about-us">
                <h3>About Us</h3>
                <p>
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                </p>
           </div>
           <div class="contact">
@@ -765,119 +744,167 @@
 <script src="./js/main.js"></script>
 <script src="https://kit.fontawesome.com/b5b791cd78.js" crossorigin="anonymous"></script>
 <script>
-     $(document).ready(function(){
+
+     let couponCarousel = {
+          class: ".hot-deals", 
+          options: {
+               nav:true,
+               dots:true,
+               autoWidth: true,
+               margin: 35,
+          }
+     }
+     let destinationsCarousel = {
+          class: ".popular-destinations", 
+          options: {
+               nav:true,
+               dots:true,
+               autoWidth: true,
+               margin: 35,
+          }
+     }
+     let adventureCarousel = {
+          class: ".exciting-adventures", 
+          options: {
+               nav:true,
+               dots:true,
+               autoWidth: true,
+               margin: 35,
+          }
+     }
+     let clientReviewsCarousel = {
+          class: ".client-reviews", 
+          options: {
+               items:1,
+               nav:true,
+               dots:true,
+               margin: 20,
+          }
+     }
+     let trendingTrips = {
+          class: ".trending-trips", 
+          options: {
+               nav:true,
+               autoWidth: true,
+               margin: 35
+          }
+     }
+
+     let sliders = [trendingTrips, adventureCarousel, destinationsCarousel]
+
+     sliders.forEach(slider=>{
+          let carousel = $(`${slider.class} .owl-carousel`)
+          carousel.owlCarousel(slider.options);
+     })
+
+
+     async function fetchData(url){
+          let fetchedData = await fetch(url)
+          let result  = await fetchedData.json()
+          return result
+     }
+
+     const setBanners = function(items){
+          console.log(items)
+
+          let wrapper = $('.banner-wrapper .banner')
+          
+          items.forEach(item=>{
+               let content = `<div class="">
+                                   <img class="banner-image" style="background-image:url('${item.image}')" alt="">
+                                   <div class="banner-details">
+                                        <div class="title">
+                                             <pre>${item.title}</pre>
+                                        </div>
+                                        <p class="tag">${item.tag}</p>
+                                       <a href="${item.link}" class="btn">See Now</a>
+                                    </div>
+                              </div>`
+               wrapper.append(content)
+          })
+
           $(".banner.owl-carousel").owlCarousel({
-               loop:true,
                items:1,
                nav:true,
                dots:true,
                dotsContainer: '.dots',
                navContainer: '.nav',
-          });
-          let couponCarousel = {
-               class: ".hot-deals", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    dots:true,
-                    autoWidth: true,
-                    margin: 35,
-               }
-          }
-          let destinationsCarousel = {
-               class: ".popular-destinations", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    dots:true,
-                    autoWidth: true,
-                    margin: 35,
-               }
-          }
-          let adventureCarousel = {
-               class: ".exciting-adventures", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    dots:true,
-                    autoWidth: true,
-                    margin: 35,
-               }
-          }
-          let clientReviewsCarousel = {
-               class: ".client-reviews", 
-               options: {
-                    loop:true,
-                    items:1,
-                    nav:true,
-                    dots:true,
-                    margin: 20,
-               }
-          }
-          let trendingTrips = {
-               class: ".trending-trips", 
-               options: {
-                    loop:true,
-                    nav:true,
-                    autoWidth: true,
-                    margin: 35
-               }
-          }
-
-          let carousels = [couponCarousel, destinationsCarousel, adventureCarousel, clientReviewsCarousel, trendingTrips]
-
-          carousels.forEach(item=>{
-               let carousel = $(`${item.class} .owl-carousel`)
-               carousel.owlCarousel(item.options);
           })
-     });
+     }
+     const setChoose = function(items){
+          let wrapper = $('.why-us .items')
+          items.forEach(item=>{
+               let content = `<div class="item">
+                         <div class="icon">
+                              <img src="${item.icon}" >
+                         </div>
+                         <div class="details">
+                              <div class="title">${item.title}</div>
+                              <p>${item.content}</p>
+                         </div>
+                    </div>`
+               if(item.status)
+                    wrapper.append(content)
+          })
+     }
+     const setTestimonial = function(items){
+          let wrapper = $('.reviews-wrapper .reviews')
+          items.forEach(item=>{
+               let content = `<div class="review">
+                         <p class="quote"><i class="fas fa-quote-left"></i>${item.content} <i class="fas fa-quote-right"></i></p>
+                         <div class="profile flex align-center">
+                              <img class="picture" src="${item.image}" alt="">
+                              <div class="details">
+                                   <div class="name">${item.user_name}</div>
+                                   <div class="product">${item.package}</div>
+                              </div>
+                         </div>
+                    </div>`
+               if(item.status)
+                    wrapper.append(content)
+          })
+
+          let carousel = $(`${clientReviewsCarousel.class} .owl-carousel`)
+          carousel.owlCarousel(clientReviewsCarousel.options);
+     }
+     const setAbout = function(items){
+          $('.about-us p')[0].innerHTML=items[0].introduction
+     }
+     const setContact = function(items){
+          console.log(items)
+          $('.contact .details div span')[0].innerHTML = `Address: ${items[0].address}`
+          $('.contact .details div span')[1].innerHTML = `Phone: ${items[0].phone}, ${items[0].phone2}`
+          $('.contact .details div span')[2].innerHTML = `Email: ${items[0].email}`
+
+          $('.contact .social p a')[0].setAttribute('href', items[0].facebook_link)
+          $('.contact .social p a')[1].setAttribute('href', items[0].instagram_link)
+          $('.contact .social p a')[2].setAttribute('href', items[0].youtube_link)
+
+     }
+
+     fetchData('http://18.206.147.162/api/v1/info/banner/').then(banners=>{
+          setBanners(banners)
+     })
+     fetchData('http://18.206.147.162/api/v1/info/testimonial/').then(testimonial=>{
+          setTestimonial(testimonial)
+     })
+     fetchData('http://18.206.147.162/api/v1/info/choose/').then(choose=>{
+          setChoose(choose)
+     })
+     fetchData('http://18.206.147.162/api/v1/info/contact/').then(contact=>{
+          setContact(contact)
+     })
+     fetchData('http://18.206.147.162/api/v1/info/about/').then(about=>{
+          setAbout(about)
+     })
+     
+
+
 </script>
 <script>
 
-     $('.signin form').submit((e)=>{
-          e.preventDefault()
-          let user = new FormData($('.signin form')[0]);
-          const url = `http://18.206.147.162/api/v1/api-auth/login/`
-          fetch(url, {
-              method: 'POST',
-              body: user,
-              contentType: 'multipart/form-data'
-          }).then(async (response)=>{
-               let result = await response.json();
+     uploadDocument()
 
-               if(response.status == 200){
-                    window.location.href = `./profile.html?id=${result.key}`   
-               } else{
-                    console.log(result)
-                    let err = Object.key(result)
-                    console.log(err)
-               }
-          })
-     })
-
-     $('.signup form').submit((e)=>{
-          e.preventDefault()
-          let formData = new FormData($('.signup form')[0]);
-          const url = `http://18.206.147.162/api/v1/users/`
-          var object = {};
-          formData.forEach((value, key) => object[key] = value);
-          console.log(object)
-          fetch(url, {
-              method: 'POST',
-              body: formData,
-              contentType: 'multipart/form-data'
-          }).then(async (response)=>{
-               let body = await response.json();
-               console.log(body)     
-
-               if(response.status == 201){
-                    // window.location.href = "./profile.html" 
-
-               } else{
-                    console.log("Show Error")
-               }
-          })
-     })
 </script>
 </body>
 </html>

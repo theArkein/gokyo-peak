@@ -613,6 +613,12 @@ header .menu a{
      line-height: 60px;
      border-radius: 50%;
 }
+.why-us .item img{
+     width:60px;
+     height: 60px;
+     border-radius: 50%;
+     object-fit: cover;
+}
 .why-us .icon{
      border-radius: 50%;
 }
@@ -752,7 +758,7 @@ footer .bottom span{
 .tabContent{
      padding: 20px;
      height: 360px;
-     overflow-Y: auto;
+     overflow-y: auto;
 }
 .tabContent>div{
      display: none;
@@ -773,6 +779,18 @@ footer .bottom span{
      padding: 12px;
      font-size: 0.7rem;
      font-weight: bold;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+.product .summary .head .book-btn{
+     padding: 8px 16px;
+     border-radius: 8px;
+     cursor: pointer;
+     background: var(--primary-light)
+}
+.product .summary .head .book-btn:hover{
+     background-color: var(--primary)
 }
 .product .summary .name{
      font-size: 1.3em;

@@ -81,4 +81,67 @@ const uploadDocument = ()=>{
           documentForm[0].classList.remove('show')
      }
 }
-uploadDocument()
+
+// Signin Signup
+
+     $('.signin form').submit((e)=>{
+          e.preventDefault()
+          showPopUp('spinner')
+          let user = new FormData($('.signin form')[0]);
+          const url = `http://18.206.147.162/api/v1/api-auth/login/`
+          fetch(url, {
+              method: 'POST',
+              body: user,
+              contentType: 'multipart/form-data'
+          }).then(async (response)=>{
+               let result = await response.json();
+                showPopUp('signin')
+               localStorage.setItem('gokyo_key', result.key);
+               if(response.status == 200){
+                    fetch(`http://18.206.147.162/api/v1/api-auth/user/`, {
+                         method: 'GET',
+                         headers: {
+                              'Authorization': `Token ${result.key}`
+                         }
+                    }).then(res=>res.json()).then(user=>{
+                         console.log(user)
+                         localStorage.setItem('gokyo_user_id', user.pk);
+                         window.location.href = `./profile.html?id=${user.pk}`
+                    })
+               } else{
+                    $('.signin .message.error')[0].innerHTML="Please Check Your Ceredentials"
+                    $('.signin .message.error').show()
+                    setTimeout(()=>{
+                         $('.sign .message.error').hide()
+                    },3000)
+                    console.log(result)
+               }
+          })
+     })
+
+     $('.signup form').submit((e)=>{
+          e.preventDefault()
+          showPopUp('spinner')
+          let formData = new FormData($('.signup form')[0]);
+          const url = `http://18.206.147.162/api/v1/users/`
+          fetch(url, {
+              method: 'POST',
+              body: formData,
+              contentType: 'multipart/form-data'
+          }).then(async (response)=>{
+               let result = await response.json();
+               showPopUp('signup')
+                hidePopUp('spinner')
+               console.log(result)     
+
+               if(response.status == 201){
+                  showPopUp('registered')
+               } else{
+                 $('.signup .message.error')[0].innerHTML="Invalid Fields. Check Again."
+                  $('.signup .message.error').show()
+                  setTimeout(()=>{
+                       $('.signup .message.error').hide()
+                  },3000)
+               }
+          })
+     })
