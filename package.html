@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Gokyo Peak Travels & Tours</title>
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" type="text/css" href="css/forms.auth.css"/>
+</head>
+<body>
+     <header >
+          <div class="brand flex justify-space-between align-center">
+               <div class="flex align-center">
+                    <div class="logo"><a href="index.html"><img src="./images/logo.png" alt=""></a></div>
+                    <div class="typo">GOKYO PEAKS Travels & Tours</div>
+               </div>
+               <div class="hide-lg hamburger"><i class="fas fa-bars"></i></div>
+          </div>
+          <nav class="flex hide">
+              <ul class="menu">
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="#">Flights</a></li>
+                    <li><a href="#">Vehicles</a></li>
+                    <li><a href="#">Rooms</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#" class="btn" onclick="showPopUp('signin')">Signin</a></li>
+                    <li><a href="#" class="btn" onclick="showPopUp('signup')" style="background: var(--primary-light); color: #fff">Signup</a></li>
+              </ul>
+              <div class="action">
+                    <a href="#" class="btn">Hello, User</a><span class="icon">G</span>
+                    <ul>
+                         <li><a href="profile.html">View Profile</a></li>
+                         <li><a href="#" onclick="logout()">Logout</a></li>
+                    </ul>
+              </div>
+          </nav>
+     </header>
+
+     <section class="product">
+          <h1 class="title"></h1>
+          <div class="content">
+               <div class="left">
+                    <div class="tabs">
+                         <div class="tab active" onclick="showTab(event, 'overview')">Overview</div>
+                         <div class="tab" onclick="showTab(event, 'itinerary')">Itinerary</div>
+                         <div class="tab" onclick="showTab(event, 'services')">include/Exclude</div>
+                         <div class="tab" onclick="showTab(event, 'highlights')">Highlight</div>
+                         <div class="tab" onclick="showTab(event, 'equipments')">Equipments</div>
+                    </div>
+                    <div class="tabContent">
+                         <div class="overview show">
+                         </div>
+                         <div class="itinerary">
+                              <div class="day">
+                                   <div class="title">Day 5: Arrival in KTM and pickup from TIA</div>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sunt fugit itaque quod, perspiciatis incidunt corporis esse facilis autem distinctio sit magnam laborum cupiditate id rem accusantium! A, hic eveniet.</p>
+                              </div>
+                         </div>
+                         <div class="services">
+                         </div>
+                         <div class="highlights">
+                         </div>
+                         <div class="equipments">
+                         </div>
+                         <div class="reviews">
+                              <div class="review-item">
+                                   <div class="image">
+                                        <img src="./images/client-a.jpg" alt="">
+                                   </div>
+                                   <div class="details">
+                                        <div class="name">Alex Jeffery</div>
+                                        <div class="rating"><b>Ratings: </b> <span>4.5/5</span></div>
+                                        <div class="review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quod enim, autem rem blanditiis iure illum optio, error ex quos cupiditate aperiam deleniti ratione eum sit tempore consequuntur, ea doloremque.</div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="right">
+                    <div class="image">
+                         <img src="./images/destination-d.jpg" alt="">
+                    </div>
+                    <div class="summary">
+                         <div class="head">
+                              <div class="name">Annapurna</div>
+                              <div>
+                                   <a class="book-btn" onclick="showPopUp('booking')">Book Now</a>   
+                              </div>
+                         </div>
+                         <div class="content">
+                              <div class="item discounted_price"><b>Discounted Price</b><div> -- </div></div>
+                              <div class="item original_price"><b>Original Price</b><div> -- </div></div>
+                              <div class="item place"><b>Place</b><div> -- </div></div>
+                              <div class="item duration"><b>Duration</b><div> -- </div></div>
+                              <div class="item difficulty"><b>Difficulty</b><div> -- </div></div>
+                              <div class="item group_size"><b>Group Size</b><div> -- </div></div>
+                              <div class="item end_loaction"><b>End At</b><div> -- </div></div>
+                              <div class="item start_location"><b>Start From</b><div> -- </div></div>
+                              <div class="item best_season"><b>Best Season</b><div> -- </div></div>
+                              <div class="item package_type"><b>Package Type</b><div> -- </div></div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <section class="recommendation">
+          <h2 class="section-title">Recommended for you</h2>
+         <div class="recommended">
+               <h4>Destinations</h4>    
+               <div class="destinations">
+                    <div class="destination">
+                         <div class="front" style="background-image: url('./images/destination-b.jpg');">
+                              <div class="title">Annapurna</div>
+                              <div class="subtitle">The Wonderlust</div>
+                              <div class="price">$999</div>
+                         </div>
+                         <div class="back">
+                             <p class="description">Lorem ipsaaaaaaaaaaamenda, amet temporibus!</p>
+                              <a href="#" class='btn'>Book Now</a>
+                         </div>
+                    </div>
+                    <div class="destination">
+                         <div class="front" style="background-image: url('./images/destination-a.jpg');">
+                              <div class="title">Annapurna</div>
+                              <div class="subtitle">The Wonderlust</div>
+                              <div class="price">$999</div>
+                         </div>
+                         <div class="back">
+                             <p class="description">Lorem ipsaaaaaaaaaaamenda, amet temporibus!</p>
+                              <a href="#" class='btn'>Book Now</a>
+                         </div>
+                    </div>
+                    <div class="destination">
+                         <div class="front" style="background-image: url('./images/destination-b.jpg');">
+                              <div class="title">Annapurna</div>
+                              <div class="subtitle">The Wonderlust</div>
+                              <div class="price">$999</div>
+                         </div>
+                         <div class="back">
+                             <p class="description">Lorem ipsaaaaaaaaaaamenda, amet temporibus!</p>
+                              <a href="#" class="btn">Book Now</a>
+                         </div>
+                    </div>
+               </div>
+         </div>
+         <div class="recommended">
+               <h4>Holiday Packages</h4>
+              <div class="packages">
+                    <div class="package">
+                         <img src="./images/destination-c.jpg" alt="">
+                         <div class="details">
+                              <div class="head flex justify-space-between align-center">
+                                   <h3 class='name'>Annapurna Base Camp Trekking</h3><div class="price"><i class="fas"></i> <span>$ 1100</span></div>
+                              </div>
+                              <div class="body flex align-center justify-space-between">
+                                   <div class="">
+                                        <div class="duration flex  align-center"><i class="fas fa-clock"> </i>  <span> 15days</span></div>
+                                        <div class="location"><i class="fas fa-map-marker-alt"></i></i><span>Annapurna, Nepal</span></div>
+                                   </div>
+                                   <a href="" class="btn">Book Now</a>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="package">
+                         <img src="./images/banner.jpg" alt="">
+                         <div class="details">
+                              <div class="head flex justify-space-between align-center">
+                                   <h3 class='name'>Annapurna Base Camp Trekking</h3><div class="price"><i class="fas"></i> <span>$ 1100</span></div>
+                              </div>
+                              <div class="body flex align-center justify-space-between">
+                                   <div class="">
+                                        <div class="duration flex  align-center"><i class="fas fa-clock"> </i>  <span> 15days</span></div>
+                                        <div class="location"><i class="fas fa-map-marker-alt"></i></i><span>Annapurna, Nepal</span></div>
+                                   </div>
+                                   <a href="" class="btn">Book Now</a>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="package">
+                         <img src="./images/destination-a.jpg" alt="">
+                         <div class="details">
+                              <div class="head flex justify-space-between align-center">
+                                   <h3 class='name'>Annapurna Base Camp Trekking</h3><div class="price"><i class="fas"></i> <span>$ 1100</span></div>
+                              </div>
+                              <div class="body flex align-center justify-space-between">
+                                   <div class="">
+                                        <div class="duration flex  align-center"><i class="fas fa-clock"> </i>  <span> 15days</span></div>
+                                        <div class="location"><i class="fas fa-map-marker-alt"></i></i><span>Annapurna, Nepal</span></div>
+                                   </div>
+                                   <a href="" class="btn">Book Now</a>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+         </div>
+         <div class="recommended">
+               <h4>Adeventures</h4>
+              <div class="adventures">
+                    <div class="adventure">
+                         <img src="./images/Adventurers-rafting-in-a-boat-in-a-river-in-Nepal-ss04082017.jpg" alt="">
+                         <div class="details">
+                              <h3 class="title">Bunjee Jumping</h3>
+                              <div class="level">Difficulty: Medium</div>
+                              <div>
+                                   <span class="price">$50</span>
+                                   <a href="#" class="btn">Book Now</a>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="adventure">
+                         <img src="./images/Adventurers-rafting-in-a-boat-in-a-river-in-Nepal-ss04082017.jpg" alt="">
+                         <div class="details">
+                              <h3 class="title">Rafting</h3>
+                              <div class="level">Difficulty: Medium</div>
+                              <div>
+                                   <span class="price">$50</span>
+                                   <a href="#" class="btn">Book Now</a>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="adventure">
+                         <img src="./images/rock-climbin-(6).jpg" alt="">
+                         <div class="details">
+                              <h3 class="title">Rock Climbing</h3>
+                              <div class="level">Difficulty: Hard</div>
+                              <div>
+                                   <span class="price">$50</span>
+                                   <a href="#" class="btn">Book Now</a>
+                              </div>
+                         </div>
+                    </div>
+                </div>
+         </div>
+     </section>    
+
+     <div class="booking-fixed-icons">
+          <div class="parent">
+               <div class="children">
+                    <a href="book.html" class="book-item"><i class="fa fa-plane"></i><span>Flights</span></a>
+                    <a href="book.html" class="book-item"><i class="fa fa-taxi"></i><span>Vehicles</span></a>
+                    <a href="book.html" class="book-item"><i class="fa fa-hotel"></i><span>Hotels</span></a>
+                    <a href="book.html" class="book-item"><i class="fa fa-hiking"></i><span>Holidays</span></a>
+               </div>
+               <div class="head">Book<br>Now</div>
+          </div>
+     </div>
+     
+<div class="pop-up signin">
+          <section class="signin-form">
+               <form >
+                    <h3 class="form-title">Signin</h3>
+                    <div class="close" onclick="hidePopUp('signin')">X</div>
+                    <div class="message error">Error Here</div>
+                    <div class="input">
+                         <label for="email">Email</label>
+                         <input type="text" id="email" name="email" value="hello12345@gokyo.com"> 
+                    </div>
+                    <div class="input">
+                          <label for="password">Password</label>
+                         <input type="password" id="password" name="password" value="nepal@123"> 
+                    </div>
+                    <div class="input">
+                         <input type="submit" name="submit" value="Signin">
+                    </div>
+               </form>
+               <p class="alternate">Dont have an account: <a href="#" onclick="showPopUp('signup')">signup</a></p>
+          </section>
+     </div>
+
+     <div class="pop-up signup">
+           <section class="signup-form">
+               <form action="#">
+                    <h3 class="form-title">Signup</h3>
+                    <div class="close" onclick="hidePopUp('signup')">X</div>     
+                    <div class="head">
+                         <h3 class="form-title">Steps</h3>
+                         <div class="process-steps">
+                              <div class="process-step active" onclick="showFormStep(event,'form-step-a')">
+                                   <div class="number">1</div>
+                                   <span>Personal Details</span>
+                              </div>
+                              <div class="process-step" onclick="showFormStep(event,'form-step-b')">
+                                   <div class="number">2</div>
+                                   <span>Contact Details</span>
+                              </div>
+                              <div class="process-step" onclick="showFormStep(event,'form-step-c')">
+                                   <div class="number">3</div>
+                                   <span>Upload Documents</span>
+                              </div>
+                              <div class="process-step" onclick="showFormStep(event,'form-step-d')">
+                                   <div class="number">4</div>
+                                   <span>Create Ceredentials</span>
+                              </div>
+
+                         </div>
+                    </div>
+                    <div class="form-steps">
+                         <div class="form-step form-step-a show">
+                              <h3 class="step-title">Personal Details</h3> 
+                              <div class="wrapper">
+                                   <div class="input">
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" name="first_name" id="first_name" placeholder="eg: John">
+                                   </div>
+                                   <div class="input">
+                                        <label for="middle_name">First Name</label>
+                                        <input type="text" name="middle_name" id="first_name" placeholder="">
+                                   </div>
+                                   <div class="input">
+                                        <label for="last_name">Last Name</label>
+                                        <input type="text" name="last_name" id="last_name" placeholder="eg: Doe">
+                                   </div>
+                                   <div class="input">
+                                        <label for="username">Username</label>
+                                        <input type="text" name="username" id="username" placeholder="eg: Johndoe">
+                                   </div>
+                                   <div class="input">
+                                        <label for="gender">Gender</label>
+                                        <select name="gender" id="gender">
+                                          <option value="">Select Gender</option>
+                                          <option value="m">Male</option>
+                                          <option value="f">Female</option>
+                                        </select>
+                                   </div>
+                                   <div class="input">
+                                        <label for="dob">DOB:</label>
+                                        <input type="" id="dob" placeholder="DD-MM-YYYY" name="dob"> 
+                                   </div>
+                              </div>
+                              <div class="next">
+                                   <input type="button" value="Next"  onclick="showFormStep(event,'form-step-b')">
+                              </div>                        
+                         </div>
+                         <div class="form-step form-step-b">
+                              <h3 class="step-title">Contact Details</h3>  
+                              <div class="wrapper">
+                                   <div class="input">
+                                         <label for="email">Email</label>
+                                        <input type="text" id="email" name="email" placeholder="eg: johndoe@gmail.com"> 
+                                   </div>
+                                   <div class="input">
+                                        <label for="contact">Phone</label>
+                                        <input type="text" id="contact" name="contact" placeholder="eg: 9876543210">
+                                   </div>
+                                   <div class="input">
+                                        <label for="street">Street</label>
+                                        <input type="text" id="street" name="street" placeholder="eg: 123 Main Street">
+                                   </div>
+                                   <div class="input">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" name="city" placeholder="eg: New York City">
+                                   </div>
+                                   <div class="input">
+                                        <label for="state_region">State/Region</label>
+                                        <input type="text" id="state_region" name="state_region" placeholder="eg: New York">
+                                   </div>
+                                   <div class="input">
+                                        <label for="postal_code">Postal Code</label>
+                                        <input type="text" id="postal_code" name="postal_code" placeholder="eg: 10030 ">
+                                   </div>
+                                   <div class="input">
+                                        <label for="country">Country</label>
+                                        <select id="country" name="country" class="form-control">
+                                         <option value="">Select Country</option>
+                                         <option value="Nepal">Nepal</option>
+                                         <option value="Other">Other</option>
+                                     </select>
+                                   </div>
+                              </div>
+                              <div class="next">
+                                   <input type="button" value="Next"  onclick="showFormStep(event,'form-step-c')">
+                              </div>    
+                         </div>
+                         <div class="form-step form-step-c">
+                              <h3 class="step-title">Upload Documents</h3> 
+                              <div class="">
+                                   <div class="input">
+                                        <label for="reference_doc_type">Citizenship/Passport</label>
+                                        <select name="reference_doc_type" id="reference_doc_type" onchange="uploadDocument()">
+                                          <option value="none">Select Document</option>
+                                          <option value="citizenship">Citizenship</option>
+                                          <option value="passport">Passport</option>
+                                        </select>
+                                   </div>
+                                   <div class="upload-document citizenship-details wrapper">
+                                        <div class="input">
+                                             <label for="citizenship-media-front">Citizenship ID Front</label>
+                                             <input type="file" id="citizenship-media-front" name="citizenship-media-front">
+                                        </div>
+                                        <div class="input">
+                                             <label for="citizenship-media-front">Citizenship ID Back</label>
+                                             <input type="file" id="citizenship-media-back" name="citizenship-media-back">
+                                        </div>         
+                                        <div class="input">
+                                             <label for="ref_doc_number">Citizenship Number</label>
+                                             <input type="text" name="ref_doc_number" id="ref_doc_number" placeholder="eg: 58-76-04-8474">
+                                        </div>
+                                        <div class="input">
+                                             <label for="citizenship-issue-date">Issue Date</label>
+                                             <input type="date" name="citizenship-issue-date" id="citizenship-issue-date">                                 
+                                        </div>
+                                   </div>
+                                   <div class="upload-document passport-details wrapper">
+                                        <div class="input">
+                                             <label for="passport-media">Passport</label>
+                                             <input type="file" id="passport-media" name="passport-media">
+                                        </div>         
+                                        <div class="input">
+                                             <label for="passport-number">Passport Number</label>
+                                             <input type="text" name="passport-number" id="passport-number" placeholder="eg: 58-76-04-8474">
+                                        </div>
+                                        <div class="input">
+                                             <label for="passport-expiry-date">Expiry Date</label>
+                                             <input type="date" name="passport-expiry-date" id="passport-issue-date">
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="next">
+                                   <input type="button" value="Next"  onclick="showFormStep(event,'form-step-d')">
+                              </div>
+                         </div>
+                         <div class="form-step form-step-d">
+                              <h3 class="step-title">Create Ceredentials</h3>
+                              <div class="wrapper">
+                                   <div class="input">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" id="password" placeholder="password">
+                                   </div>
+                                   <div class="input">
+                                        <label for="confrim-password">Confirm Password</label>
+                                        <input type="password" name="confrim-password" id="confrim-password" placeholder="confirm password">
+                                   </div>
+                              </div>
+                              <div class="next">
+                                   <input type="Submit" value="Submit">
+                              </div>    
+                         </div>
+                    </div>
+               </form>
+               <p class="alternate">Already have an account: <a href="#" onclick="showPopUp('signin')">signin</a></p>
+          </section>
+     </div>
+
+<div class="pop-up booking">
+     <section class="booking-form">
+          <form action="#">
+               <h3 class="form-title">Book Package</h3>
+               <div class="close" onclick="hidePopUp('booking')">X</div>
+               <div class="input">
+                    <label for="booked_for">Booked For</label>
+                    <input type="date" id="booked_for" name="booked_for" required> 
+               </div>
+               <div class="input">
+                     <label for="quantity">Number of persons</label>
+                    <input type="number" id="quantity" name="quantity" required> 
+               </div>
+               <div class="input">
+                    <input type="submit" value="Book Now">
+               </div>
+          </form>
+     </section>
+</div>
+
+<div class="pop-up thankyou">
+     <section class="thankyou-popup">
+             <div class="close" onclick="hidePopUp('thankyou')">X</div>
+             <h3>Thankyou</h3>
+             <span>Your package is successfully booked. You will be contacted soon</span>
+     </section>
+</div>
+
+<div class="pop-up noUser">
+     <section class="noUser-popup">
+             <div class="close" onclick="hidePopUp('noUser')">X</div>
+             <h3>Only registered customers can book a package</h3>
+             <span class="alternate">Already have an account? <a href="#" onclick="showPopUp('signin')">signin</a></span><br>
+             <span class="alternate">Dont have an account? <a href="#" onclick="showPopUp('signup')">signup</a></span>
+     </section>
+</div>
+
+
+<div class="pop-up spinner">
+     <img src="./images/spinner.svg" alt="">           
+</div>
+
+
+<div class="pop-up registered">
+     <section class="registered-popup">
+             <div class="close" onclick="hidePopUp('registered')">X</div>
+             <h3>Registered Successfully</h3>
+             <span>Thankyou for registration</span>
+               <span class="alternate">Please <a href="#" onclick="showPopUp('signin')">signin</a></span>
+
+     </section>
+</div>
+
+<footer>
+     <div class="top">
+          <div class="menu-links links">
+               <h3>Important Links</h3>
+               <ul>
+                    <li><a href="#">Home</li>
+                    <li><a href="#">Book FLights</a></li>
+                    <li><a href="#">Book Vehicles</a></li>
+                    <li><a href="#">Book Rooms</a></li>
+                    <li><a href="#">See Packages</a></li>
+               </ul>
+          </div>
+          <div class="packages-links links">
+               <h3>Trending Packages</h3>
+               <ul>
+                    <li><a href="#">Bunjee Jump</li>
+                    <li><a href="#">Annapurna Trekking</a></li>
+                    <li><a href="#">Jungle Safari</a></li>
+                    <li><a href="#">Paragliding</a></li>
+                    <li><a href="#">Lake Rara</a></li>
+               </ul>
+          </div>
+          <div class="about-us">
+               <h3>About Us</h3>
+               <p>
+               </p>
+          </div>
+          <div class="contact">
+               <div class="details">
+                    <h3>Contact Details</h3>
+                    <p>
+                         <div><i class="fa fa-map-marker"></i><span>Address: Baneshwor, Kathmandu</span></div>
+                         <div><i class="fa fa-phone"></i><span>Phone: 01-9876548, 01-947464</span></div>
+                         <div><i class="fa fa-envelope"></i><span>Email: gokyo@gmail.com</span></div>
+                    </p>
+               </div>
+               <div class="social">
+                    <h3>Get Connected On</h3>
+                    <p>
+                         <a href=""><img src="./images/social-icons/facebook.png"></a>
+                         <a href=""><img src="./images/social-icons/instagram.png"></a>
+                         <a href=""><img src="./images/social-icons/youtube.png"></a>
+                    </p>
+               </div>
+          </div>
+          <img src="images/footer/footer-image.png" alt="">
+     </div>
+     <div class="bottom flex align-center justify-center"><span>© 2021, GOKYO PEAK TRAVELS & TOURS</span>  |  <span>ALL RIGHTS RESERVED</span>  |  <span>Design & Developed By: Lightweb Group</span></div>
+</footer>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="./js/main.js"></script>
+<script src="https://kit.fontawesome.com/b5b791cd78.js" crossorigin="anonymous"></script>
+<script>
+
+
+     const queryString = window.location.search;
+     const urlParams = new URLSearchParams(queryString);
+     const id = urlParams.get('id')
+
+     $('.booking form').submit((e)=>{
+          e.preventDefault()
+          if(localStorage.getItem('gokyo_key') && localStorage.getItem('gokyo_user_id')){
+               showPopUp('spinner')
+               const url = `http://18.206.147.162/api/v1/booking/`
+
+               let formData = new FormData($('.booking form')[0]);
+
+               formData.append('package_id',id)
+               formData.append('user_id', localStorage.getItem('gokyo_user_id'))
+
+               fetch(url, {
+                   method: 'POST',
+                   body: formData
+               }).then(async (response)=>{
+                    let body = await response.json();
+                    hidePopUp('spinner')
+                    console.log(body)     
+
+                    if(response.status == 201){
+                         showPopUp('thankyou')
+
+                    } else{
+                         console.log("Show Error")
+                    }
+               })
+          } else {
+               showPopUp('noUser')
+          }
+     })
+
+     let url = `http://18.206.147.162/api/v1/packages/package/${id}/`
+
+     fetch(url).then(response=>response.json()).then(package=>{
+          console.log(package)
+
+          $('.product .title')[0].innerHTML = package.title
+          $('.product .content .image img')[1].setAttribute('src', package.image)
+          $('.product .name')[1].innerHTML = package.title
+          $('.product .content .place div')[0].innerHTML = package.destination || "N/A"
+          $('.product .content .duration div')[0].innerHTML = package.duration || "N/A"
+          $('.product .content .group_size div')[0].innerHTML = package.group_size || "N/A"
+          $('.product .content .difficulty div')[0].innerHTML = package.difficulty || "N/A"
+          $('.product .content .package_type div')[0].innerHTML = package.package_type || "N/A"
+          $('.product .content .start_location div')[0].innerHTML = package.start_location || "N/A"
+          $('.product .content .end_loaction div')[0].innerHTML = package.end_loaction || "N/A"
+          $('.product .content .best_season div')[0].innerHTML = package.best_season || "N/A"
+          $('.product .content .discounted_price div')[0].innerHTML = package.discounted_price || "N/A"
+          $('.product .content .original_price div')[0].innerHTML = package.price || "N/A"
+
+
+          $('.product .overview')[0].innerHTML = package.description || "Not Available"
+          $('.product .highlights')[0].innerHTML = package.highlight || "Not Available" 
+          $('.product .itinerary')[0].innerHTML = package.itinerary || "Not Available"
+          $('.product .services')[0].innerHTML = package.services || "Not Available"
+          $('.product .equipments')[0].innerHTML = package.equipments || "Not Available"
+
+     })
+
+</script>
+</html>

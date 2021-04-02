@@ -7,11 +7,61 @@
      <link rel="stylesheet" href="css/style.css">
      <link rel="stylesheet" type="text/css" href="css/forms.auth.css"/>
 </head>
+<style>
+
+  #bookings-table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #bookings-table td, #bookings-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #bookings-table tr:nth-child(even){background-color: #f2f2f2;}
+
+  #bookings-table tr:hover {background-color: #ddd;}
+
+  #bookings-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--primary-light);
+    color: white;
+  }
+  table a{
+    color: var(--primary-light)
+  }
+  .status-approved{
+    font-size: 12px;
+    background-color: green;
+    border-radius: 8px;
+    padding: 8px 20px;
+    color: #fff;
+  }
+  .status-declined{
+    font-size: 12px;
+    background-color: red;
+    border-radius: 8px;
+    padding: 8px 20px;
+    color: #fff;
+  }
+  .status-pending{
+    font-size: 12px;
+    background-color: yellow;
+    border-radius: 8px;
+    padding: 8px 20px;
+    color: #fff;
+  }
+</style>
+</style>
 <body>
 	<header >
           <div class="brand flex justify-space-between align-center">
                <div class="flex align-center">
-                    <div class="logo"><img src="./images/logo.png" alt=""></div>
+                    <div class="logo"><a href="index.html"><img src="./images/logo.png" alt=""></a></div>
                     <div class="typo">GOKYO PEAKS Travels & Tours</div>
                </div>
                <div class="hide-lg hamburger"><i class="fas fa-bars"></i></div>
@@ -23,11 +73,16 @@
                     <li><a href="#">Vehicles</a></li>
                     <li><a href="#">Rooms</a></li>
                     <li><a href="#">Destinations</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a class="btn" onclick="logout()" style="cursor: pointer;">Logout</a></li>
-
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#" class="btn" onclick="showPopUp('signin')">Signin</a></li>
+                    <li><a href="#" class="btn" onclick="showPopUp('signup')" style="background: var(--primary-light); color: #fff">Signup</a></li>
               </ul>
               <div class="action">
+                    <a href="#" class="btn">Hello, User</a><span class="icon">G</span>
+                    <ul>
+                         <li><a href="profile.html">View Profile</a></li>
+                         <li><a href="#" onclick="logout()">Logout</a></li>
+                    </ul>
               </div>
           </nav>
      </header>
@@ -146,7 +201,14 @@
 	         	</form>
           	</div>
 	         <div class="package-orders">
-	         	Package Orders
+	         	<table id="bookings-table">
+                <tr>
+                  <th>Package</th>
+                  <th>Booked Date</th>
+                  <th>Number of persons</th>
+                  <th>Status</th>
+                </tr>
+            </table>
 	         </div>	
 	         <div class="flight-orders">
 	         	Flight Orders
@@ -198,10 +260,6 @@
           <div class="about-us">
                <h3>About Us</h3>
                <p>
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                </p>
           </div>
           <div class="contact">
@@ -224,7 +282,7 @@
           </div>
           <img src="images/footer/footer-image.png" alt="">
      </div>
-     <div class="bottom flex align-center justify-center"><span>© 2021, GOKYO PEAK TRAVELS & TOURS</span>  |  <span>ALL RIGHTS RESERVED</span><span>Design & Developed By: Lightweb Group</span></div>
+     <div class="bottom flex align-center justify-center"><span>© 2021, GOKYO PEAK TRAVELS & TOURS</span>  |  <span>ALL RIGHTS RESERVED</span>  |  <span>Design & Developed By: Lightweb Group</span></div>
 </footer>
 </body>
 <script src="js/jquery.min.js"></script>
@@ -268,7 +326,7 @@ const setUserDetails = function (user){
   $(document).ready(function (){
   	const queryString = window.location.search;
   	const urlParams = new URLSearchParams(queryString);
-  	const id = urlParams.get('id')
+  	const id = localStorage.getItem('gokyo_user_id')
   	const url = `http://18.206.147.162/api/v1/users/${id}/`
 
     if(id && localStorage.getItem('gokyo_key')){
@@ -290,10 +348,24 @@ const setUserDetails = function (user){
   })
   uploadDocument()
 
-  function logout(){
-    localStorage.clear()
-    window.location.href = `./index.html`    
-  }
+  fetchData('http://18.206.147.162/api/v1/booking/search/?id=9').then(bookings=>{
+       let table = $('#bookings-table')
+       if(!bookings.length){
+          table.append("<td colspan='4'>No packages booked yet</td>")
+       } else{
+          bookings.forEach(booking=>{
+            let row = `<tr>
+                  <td><a href="package.html?id=${booking.package_id}">${booking.package_title}</a></td></td>
+                  <td>${booking.booked_for}</td>
+                  <td>${booking.quantity}</td>
+                  ${(booking.status)? (booking.status=="A")? "<td><span class='status-approved'> Approved </span></td>" : "<td><span class='status-declined'> Declined </span></td>" : "<td><span class='status-pending'> Pending </span></td>"}
+
+              </tr>` 
+              table.append(row)
+         })
+       }
+       
+  })
 
 </script>
 </html>

@@ -1,4 +1,4 @@
-.signin-form, .signup-form, .booking-form, .thankyou-popup, .registered-popup{
+.signin-form, .signup-form, .booking-form, .thankyou-popup, .registered-popup, .noUser-popup{
 	max-width: 700px;
 	background-color: #fff;
 	padding: 12px 25px;

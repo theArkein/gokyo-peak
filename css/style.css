@@ -1117,3 +1117,52 @@ footer .bottom span{
      display: flex;
      flex-wrap: wrap;
 }
+
+header .action {
+     position: relative;
+}
+header .action:hover ul{
+     display: block;
+}
+header .action ul {
+     background: #fff;
+     padding: 16px 30px;
+     position: absolute;
+     display: none;
+     width: 100px;
+     right: 6px;
+     top: 25px;
+     text-align: right;
+     border: 1px solid #aaa;
+}
+
+
+header .action ul li a{
+     color: #333;
+     font-size: 12px;
+}
+header .action ul li a:hover{
+     color: var(--primary-light);
+}
+header .action .icon {
+     background-color: var(--primary-light);
+     color: #fff;
+     width: 30px;
+     height: 30px;
+     line-height: 30px;
+     text-align: center;
+     display: inline-block;
+     border-radius: 50%;
+     position: relative;
+     right: 12px;
+}
+
+section.about{
+    margin-top: 100px;
+    max-width: 800px;
+    text-align: justify;
+}
+
+section.about .section-title{
+     font-size: 2em;
+}

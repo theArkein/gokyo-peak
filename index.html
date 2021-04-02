@@ -12,7 +12,7 @@
      <header >
           <div class="brand flex justify-space-between align-center">
                <div class="flex align-center">
-                    <div class="logo"><img src="./images/logo.png" alt=""></div>
+                    <div class="logo"><a href="index.html"><img src="./images/logo.png" alt=""></a></div>
                     <div class="typo">GOKYO PEAKS Travels & Tours</div>
                </div>
                <div class="hide-lg hamburger"><i class="fas fa-bars"></i></div>
@@ -27,9 +27,13 @@
                     <li><a href="#">About Us</a></li>
                     <li><a href="#" class="btn" onclick="showPopUp('signin')">Signin</a></li>
                     <li><a href="#" class="btn" onclick="showPopUp('signup')" style="background: var(--primary-light); color: #fff">Signup</a></li>
-
               </ul>
               <div class="action">
+                    <a href="#" class="btn">Hello, User</a><span class="icon">G</span>
+                    <ul>
+                         <li><a href="profile.html">View Profile</a></li>
+                         <li><a href="#" onclick="logout()">Logout</a></li>
+                    </ul>
               </div>
           </nav>
      </header>
@@ -88,7 +92,7 @@
                <div class="holidays">holidays</div>
           </div>
      </section>
-     <section class="hot-deals">
+    <!--  <section class="hot-deals">
           <h2 class="section-title">
                Hot Deals
           </h2>
@@ -157,10 +161,10 @@
           
           </div>
      </section>
-
+ -->
      <section class="popular-destinations">
           <h2 class="section-title">
-               Popular Destinations
+               
           </h2>
           <div class="owl-carousel destinations">
                <div class="destination">
@@ -359,6 +363,31 @@
                               </div>
                          </div>
                     </div>
+
+                    <div class="review">
+                         <p class="quote"><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium omnis culpa quidem commodi corporis temporibus et possimus nesciunt id laboriosam deserunt totam sapiente amet, voluptatum illo tenetur dolor pariatur debitis! <i class="fas fa-quote-right"></i></p>
+                         <div class="profile flex align-center">
+                              <img class="picture" src="./images/client-a.jpg" alt="">
+                              <div class="details">
+                                   <div class="name">Henry Gusswing</div>
+                                   <div class="profession">Photographer</div>
+                                   <div class="product">Annapurna Base Camp - 20 Days</div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="review">
+                         <p class="quote"><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium omnis culpa quidem commodi corporis temporibus et possimus nesciunt id laboriosam deserunt totam sapiente amet, voluptatum illo tenetur dolor pariatur debitis! <i class="fas fa-quote-right"></i></p>
+                         <div class="profile flex align-center">
+                              <img class="picture" src="./images/client-a.jpg" alt="">
+                              <div class="details">
+                                   <div class="name">Henry Gusswing</div>
+                                   <div class="profession">Photographer</div>
+                                   <div class="product">Annapurna Base Camp - 20 Days</div>
+                              </div>
+                         </div>
+                    </div>
+
                 </div>
           </div>
      </section>
@@ -745,68 +774,7 @@
 <script src="https://kit.fontawesome.com/b5b791cd78.js" crossorigin="anonymous"></script>
 <script>
 
-     let couponCarousel = {
-          class: ".hot-deals", 
-          options: {
-               nav:true,
-               dots:true,
-               autoWidth: true,
-               margin: 35,
-          }
-     }
-     let destinationsCarousel = {
-          class: ".popular-destinations", 
-          options: {
-               nav:true,
-               dots:true,
-               autoWidth: true,
-               margin: 35,
-          }
-     }
-     let adventureCarousel = {
-          class: ".exciting-adventures", 
-          options: {
-               nav:true,
-               dots:true,
-               autoWidth: true,
-               margin: 35,
-          }
-     }
-     let clientReviewsCarousel = {
-          class: ".client-reviews", 
-          options: {
-               items:1,
-               nav:true,
-               dots:true,
-               margin: 20,
-          }
-     }
-     let trendingTrips = {
-          class: ".trending-trips", 
-          options: {
-               nav:true,
-               autoWidth: true,
-               margin: 35
-          }
-     }
-
-     let sliders = [trendingTrips, adventureCarousel, destinationsCarousel]
-
-     sliders.forEach(slider=>{
-          let carousel = $(`${slider.class} .owl-carousel`)
-          carousel.owlCarousel(slider.options);
-     })
-
-
-     async function fetchData(url){
-          let fetchedData = await fetch(url)
-          let result  = await fetchedData.json()
-          return result
-     }
-
      const setBanners = function(items){
-          console.log(items)
-
           let wrapper = $('.banner-wrapper .banner')
           
           items.forEach(item=>{
@@ -860,43 +828,141 @@
                               </div>
                          </div>
                     </div>`
-               if(item.status)
-                    wrapper.append(content)
+               wrapper.append(content)
           })
 
-          let carousel = $(`${clientReviewsCarousel.class} .owl-carousel`)
-          carousel.owlCarousel(clientReviewsCarousel.options);
+          $(".client-reviews .owl-carousel").owlCarousel({
+               loop: true,
+               items:1,
+               nav:true,
+               dots:true,
+               margin: 20,
+          })
      }
-     const setAbout = function(items){
-          $('.about-us p')[0].innerHTML=items[0].introduction
-     }
-     const setContact = function(items){
-          console.log(items)
-          $('.contact .details div span')[0].innerHTML = `Address: ${items[0].address}`
-          $('.contact .details div span')[1].innerHTML = `Phone: ${items[0].phone}, ${items[0].phone2}`
-          $('.contact .details div span')[2].innerHTML = `Email: ${items[0].email}`
 
-          $('.contact .social p a')[0].setAttribute('href', items[0].facebook_link)
-          $('.contact .social p a')[1].setAttribute('href', items[0].instagram_link)
-          $('.contact .social p a')[2].setAttribute('href', items[0].youtube_link)
+     const setSlider1 = function(packages){
+          packages.forEach(package=>{
+               let item = `<div class="destination">
+                    <div class="front" style="background-image: url('${package.image}');">
+                         <div class="title">${package.title}</div>
+                         <div class="subtitle">${package.tag || ""}</div>
+                         <div class="price">Nrs. ${package.price || package.discounted_price}</div>
+                    </div>
+                    <div class="back">
+                        <p class="description">${package.description}!</p>
+                         <a href="package.html?id=${package.id}" class='btn'>Book Now</a>
+                    </div>
+               </div>`
+               $('.owl-carousel.destinations').append(item)
+          })
 
+          $(".owl-carousel.destinations").owlCarousel({
+               loop: true,
+               nav:true,
+               dots:true,
+               autoWidth: true,
+               margin: 35,
+          })
      }
+
+
+     const setSlider2 = function(packages){
+          console.log(packages)
+          packages.forEach(package=>{
+               let item = `<div class="adventure">
+                    <img src="${package.image}" alt="">
+                    <div class="details">
+                         <h3 class="title">${package.title}</h3>
+                         <div class="level">Difficulty: ${package.difficulty}</div>
+                         <div>
+                              <span class="price">Nrs. ${package.price || package.discounted_price}</span>
+                              <a href="package.html?id=${package.id}" class="btn">Book Now</a>
+                         </div>
+                    </div>
+               </div>`
+               $('.owl-carousel.adventures').append(item)
+          })
+
+          $(".owl-carousel.adventures").owlCarousel({
+               loop: true,
+               nav:true,
+               dots:true,
+               autoWidth: true,
+               margin: 35,
+          })
+     }
+
+     const setSlider3 = function(packages){
+          console.log(packages)
+          packages.forEach(package=>{
+               let item = `<div class="package">
+                    <img src="${package.image}" alt="">
+                    <div class="details">
+                         <div class="head flex justify-space-between align-center">
+                              <h3 class='name'>${package.title}</h3><div class="price"><span>Nrs. ${package.price || package.discounted_price}</span></div>
+                         </div>
+                         <div class="body flex align-center justify-space-between">
+                              <div class="">
+                                   <div class="duration flex  align-center"><i class="fas fa-clock"> </i>  <span> ${package.duration}</span></div>
+                                   <div class="location"><i class="fas fa-map-marker-alt"></i></i><span>${package.destination}</span></div>
+                              </div>
+                              <a href="package.html?id=${package.id}" class="btn">Book Now</a>
+                         </div>
+                    </div>
+               </div>`
+               $('.owl-carousel.packages').append(item)
+          })
+
+          $(".owl-carousel.packages").owlCarousel({
+               loop: true,
+               nav:true,
+               dots:true,
+               autoWidth: true,
+               margin: 35,
+          })
+     }
+
 
      fetchData('http://18.206.147.162/api/v1/info/banner/').then(banners=>{
           setBanners(banners)
      })
+     
      fetchData('http://18.206.147.162/api/v1/info/testimonial/').then(testimonial=>{
+          console.log(testimonial)
           setTestimonial(testimonial)
      })
+
      fetchData('http://18.206.147.162/api/v1/info/choose/').then(choose=>{
           setChoose(choose)
      })
-     fetchData('http://18.206.147.162/api/v1/info/contact/').then(contact=>{
-          setContact(contact)
-     })
-     fetchData('http://18.206.147.162/api/v1/info/about/').then(about=>{
-          setAbout(about)
-     })
+
+     fetchData('http://18.206.147.162/api/v1/info/slider/1/').then(sliders=>{
+          $('.popular-destinations .section-title')[0].innerHTML = `Popular ${sliders.slider1}`
+          $('.exciting-adventures .section-title')[0].innerHTML = `Trending ${sliders.slider2}`
+          $('.trending-trips .section-title')[0].innerHTML = `Exciting ${sliders.slider3}`
+
+
+          fetchData(`http://18.206.147.162/api/v1/info/slider/packages/?category=activity`).then(packages=>{
+               if(packages.length)
+                    setSlider1(packages)
+               else
+                    $('.popular-destinations')[0].remove()
+          })
+
+          fetchData(`http://18.206.147.162/api/v1/info/slider/packages/?category=activity`).then(packages=>{
+               if(packages.length)
+                    setSlider2(packages)
+               else
+                    $('.exciting-adventures')[0].remove()
+          })
+
+          fetchData(`http://18.206.147.162/api/v1/info/slider/packages/?category=activity`).then(packages=>{
+               if(packages.length)
+                    setSlider3(packages)
+               else
+                    $('.trending-trips')[0].remove()
+          })
+     })     
      
 
 

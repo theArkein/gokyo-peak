@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Gokyo Peak Travels & Tours</title>
+     <link rel="stylesheet" href="css/owl.carousel.min.css">
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" type="text/css" href="css/forms.auth.css"/>
+</head>
+<body>
+     <header >
+          <div class="brand flex justify-space-between align-center">
+               <div class="flex align-center">
+                    <div class="logo"><a href="index.html"><img src="./images/logo.png" alt=""></a></div>
+                    <div class="typo">GOKYO PEAKS Travels & Tours</div>
+               </div>
+               <div class="hide-lg hamburger"><i class="fas fa-bars"></i></div>
+          </div>
+          <nav class="flex hide">
+              <ul class="menu">
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="#">Flights</a></li>
+                    <li><a href="#">Vehicles</a></li>
+                    <li><a href="#">Rooms</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#" class="btn" onclick="showPopUp('signin')">Signin</a></li>
+                    <li><a href="#" class="btn" onclick="showPopUp('signup')" style="background: var(--primary-light); color: #fff">Signup</a></li>
+              </ul>
+              <div class="action">
+                    <a href="#" class="btn">Hello, User</a><span class="icon">G</span>
+                    <ul>
+                         <li><a href="profile.html">View Profile</a></li>
+                         <li><a href="#" onclick="logout()">Logout</a></li>
+                    </ul>
+              </div>
+          </nav>
+     </header>
+
+     <section class="about">
+          <h2 class="section-title"> Introduction </h2>
+          <p></p>
+
+          <h2 class="section-title"> History </h2>
+          <p></p>
+
+
+          <h2 class="section-title"> Mission </h2>
+          <p></p>
+     </section>
+
+
+
+     <div class="pop-up signin">
+          <section class="signin-form">
+               <form >
+                    <h3 class="form-title">Signin</h3>
+                    <div class="close" onclick="hidePopUp('signin')">X</div>
+                    <div class="message error">Error Here</div>
+                    <div class="input">
+                         <label for="email">Email</label>
+                         <input type="text" id="email" name="email" value="hello12345@gokyo.com"> 
+                    </div>
+                    <div class="input">
+                          <label for="password">Password</label>
+                         <input type="password" id="password" name="password" value="nepal@123"> 
+                    </div>
+                    <div class="input">
+                         <input type="submit" name="submit" value="Signin">
+                    </div>
+               </form>
+               <p class="alternate">Dont have an account: <a href="#" onclick="showPopUp('signup')">signup</a></p>
+          </section>
+     </div>
+
+     <div class="pop-up signup">
+           <section class="signup-form">
+               <form action="#">
+                    <h3 class="form-title">Signup</h3>
+                    <div class="close" onclick="hidePopUp('signup')">X</div>     
+                    <div class="head">
+                         <h3 class="form-title">Steps</h3>
+                         <div class="process-steps">
+                              <div class="process-step active" onclick="showFormStep(event,'form-step-a')">
+                                   <div class="number">1</div>
+                                   <span>Personal Details</span>
+                              </div>
+                              <div class="process-step" onclick="showFormStep(event,'form-step-b')">
+                                   <div class="number">2</div>
+                                   <span>Contact Details</span>
+                              </div>
+                              <div class="process-step" onclick="showFormStep(event,'form-step-c')">
+                                   <div class="number">3</div>
+                                   <span>Upload Documents</span>
+                              </div>
+                              <div class="process-step" onclick="showFormStep(event,'form-step-d')">
+                                   <div class="number">4</div>
+                                   <span>Create Ceredentials</span>
+                              </div>
+
+                         </div>
+                    </div>
+                    <div class="form-steps">
+                         <div class="form-step form-step-a show">
+                              <h3 class="step-title">Personal Details</h3> 
+                              <div class="wrapper">
+                                   <div class="input">
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" name="first_name" id="first_name" value="John">
+                                   </div>
+                                   <div class="input">
+                                        <label for="middle_name">First Name</label>
+                                        <input type="text" name="middle_name" id="first_name" value="">
+                                   </div>
+                                   <div class="input">
+                                        <label for="last_name">Last Name</label>
+                                        <input type="text" name="last_name" id="last_name" value="Doe">
+                                   </div>
+                                   <div class="input">
+                                        <label for="username">Username</label>
+                                        <input type="text" name="username" id="username" value="Johndoe">
+                                   </div>
+                                   <div class="input">
+                                        <label for="gender">Gender</label>
+                                        <select name="gender" id="gender">
+                                          <option value="">Select Gender</option>
+                                          <option value="m" selected>Male</option>
+                                          <option value="f">Female</option>
+                                        </select>
+                                   </div>
+                                   <div class="input">
+                                        <label for="dob">DOB:</label>
+                                        <input type="date" id="dob" name="dob" value="2000-02-12"> 
+                                   </div>
+                              </div>
+                              <div class="next">
+                                   <input type="button" value="Next"  onclick="showFormStep(event,'form-step-b')">
+                              </div>                        
+                         </div>
+                         <div class="form-step form-step-b">
+                              <h3 class="step-title">Contact Details</h3>  
+                              <div class="wrapper">
+                                   <div class="input">
+                                         <label for="email">Email</label>
+                                        <input type="text" id="email" name="email" value="johnndoe@gmail.com"> 
+                                   </div>
+                                   <div class="input">
+                                        <label for="contact">Phone</label>
+                                        <input type="text" id="contact" name="contact" value="9776543210">
+                                   </div>
+                                   <div class="input">
+                                        <label for="street">Street</label>
+                                        <input type="text" id="street" name="street" value="123 Main Street">
+                                   </div>
+                                   <div class="input">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" name="city" value="New York City">
+                                   </div>
+                                   <div class="input">
+                                        <label for="state_region">State/Region</label>
+                                        <input type="text" id="state_region" name="state_region" value="New York">
+                                   </div>
+                                   <div class="input">
+                                        <label for="postal_code">Postal Code</label>
+                                        <input type="text" id="postal_code" name="postal_code" value="10030 ">
+                                   </div>
+                                   <div class="input">
+                                        <label for="country">Country</label>
+                                        <select id="country" name="country" class="form-control">
+                                         <option value="">Select Country</option>
+                                         <option value="Nepal" selected="">Nepal</option>
+                                         <option value="Other">Other</option>
+                                     </select>
+                                   </div>
+                              </div>
+                              <div class="next">
+                                   <input type="button" value="Next"  onclick="showFormStep(event,'form-step-c')">
+                              </div>    
+                         </div>
+                         <div class="form-step form-step-c">
+                              <h3 class="step-title">Upload Documents</h3> 
+                              <div class="">
+                                   <div class="input">
+                                        <label for="reference_doc_type">Citizenship/Passport</label>
+                                        <select name="reference_doc_type" id="reference_doc_type" onchange="uploadDocument()">
+                                          <option value="none">Select Document</option>
+                                          <option value="citizenship">Citizenship</option>
+                                          <option value="passport">Passport</option>
+                                        </select>
+                                   </div>
+                                   <div class="upload-document citizenship-details wrapper">
+                                        <div class="input">
+                                             <label for="citizenship-media-front">Citizenship ID Front</label>
+                                             <input type="file" id="citizenship-media-front" name="citizenship-media-front">
+                                        </div>
+                                        <div class="input">
+                                             <label for="citizenship-media-front">Citizenship ID Back</label>
+                                             <input type="file" id="citizenship-media-back" name="citizenship-media-back">
+                                        </div>         
+                                        <div class="input">
+                                             <label for="ref_doc_number">Citizenship Number</label>
+                                             <input type="text" name="ref_doc_number" id="ref_doc_number" value="58-76-04-8474">
+                                        </div>
+                                        <div class="input">
+                                             <label for="citizenship-issue-date">Issue Date</label>
+                                             <input type="date" name="citizenship-issue-date" id="citizenship-issue-date">                                 
+                                        </div>
+                                   </div>
+                                   <div class="upload-document passport-details wrapper">
+                                        <div class="input">
+                                             <label for="passport-media">Passport</label>
+                                             <input type="file" id="passport-media" name="passport-media">
+                                        </div>         
+                                        <div class="input">
+                                             <label for="passport-number">Passport Number</label>
+                                             <input type="text" name="passport-number" id="passport-number" value="58-76-04-8474">
+                                        </div>
+                                        <div class="input">
+                                             <label for="passport-expiry-date">Expiry Date</label>
+                                             <input type="date" name="passport-expiry-date" id="passport-issue-date">
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="next">
+                                   <input type="button" value="Next"  onclick="showFormStep(event,'form-step-d')">
+                              </div>
+                         </div>
+                         <div class="form-step form-step-d">
+                              <h3 class="step-title">Create Ceredentials</h3>
+                              <div class="message error">Error Here</div>
+
+                              <div class="wrapper">
+                                   <div class="input">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" id="password" value="password">
+                                   </div>
+                                   <div class="input">
+                                        <label for="confrim-password">Confirm Password</label>
+                                        <input type="password" name="confrim-password" id="confrim-password" value="password">
+                                   </div>
+                              </div>
+                              <div class="next">
+                                   <input type="Submit" value="Submit">
+                              </div>    
+                         </div>
+                    </div>
+               </form>
+               <p class="alternate">Already have an account: <a href="#" onclick="showPopUp('signin')">signin</a></p>
+          </section>
+     </div>
+
+     <div class="booking-fixed-icons">
+          <div class="parent">
+               <div class="children">
+                    <a href="book.html" class="book-item"><i class="fa fa-plane"></i><span>Flights</span></a>
+                    <a href="book.html" class="book-item"><i class="fa fa-taxi"></i><span>Vehicles</span></a>
+                    <a href="book.html" class="book-item"><i class="fa fa-hotel"></i><span>Hotels</span></a>
+                    <a href="book.html" class="book-item"><i class="fa fa-hiking"></i><span>Holidays</span></a>
+               </div>
+               <div class="head">Book<br>Now</div>
+          </div>
+     </div>
+
+     <div class="pop-up registered">
+          <section class="registered-popup">
+                  <div class="close" onclick="hidePopUp('registered')">X</div>
+                  <h3>Registered Successfully</h3>
+                  <span>Thankyou for registration</span>
+                    <span class="alternate">Please <a href="#" onclick="showPopUp('signin')">signin</a></span>
+
+          </section>
+     </div>
+
+     <div class="pop-up spinner">
+          <img src="./images/spinner.svg" alt="">           
+     </div>
+
+<footer>
+     <div class="top">
+          <div class="menu-links links">
+               <h3>Important Links</h3>
+               <ul>
+                    <li><a href="#">Home</li>
+                    <li><a href="#">Book FLights</a></li>
+                    <li><a href="#">Book Vehicles</a></li>
+                    <li><a href="#">Book Rooms</a></li>
+                    <li><a href="#">See Packages</a></li>
+               </ul>
+          </div>
+          <div class="packages-links links">
+               <h3>Trending Packages</h3>
+               <ul>
+                    <li><a href="#">Bunjee Jump</li>
+                    <li><a href="#">Annapurna Trekking</a></li>
+                    <li><a href="#">Jungle Safari</a></li>
+                    <li><a href="#">Paragliding</a></li>
+                    <li><a href="#">Lake Rara</a></li>
+               </ul>
+          </div>
+          <div class="about-us">
+               <h3>About Us</h3>
+               <p>
+               </p>
+          </div>
+          <div class="contact">
+               <div class="details">
+                    <h3>Contact Details</h3>
+                    <p>
+                         <div><i class="fa fa-map-marker"></i><span>Address: Baneshwor, Kathmandu</span></div>
+                         <div><i class="fa fa-phone"></i><span>Phone: 01-9876548, 01-947464</span></div>
+                         <div><i class="fa fa-envelope"></i><span>Email: gokyo@gmail.com</span></div>
+                    </p>
+               </div>
+               <div class="social">
+                    <h3>Get Connected On</h3>
+                    <p>
+                         <a href=""><img src="./images/social-icons/facebook.png"></a>
+                         <a href=""><img src="./images/social-icons/instagram.png"></a>
+                         <a href=""><img src="./images/social-icons/youtube.png"></a>
+                    </p>
+               </div>
+          </div>
+          <img src="images/footer/footer-image.png" alt="">
+     </div>
+     <div class="bottom flex align-center justify-center"><span>© 2021, GOKYO PEAK TRAVELS & TOURS</span>  |  <span>ALL RIGHTS RESERVED</span>  |  <span>Design & Developed By: Lightweb Group</span></div>
+</footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="./js/main.js"></script>
+<script src="https://kit.fontawesome.com/b5b791cd78.js" crossorigin="anonymous"></script>
+<script>
+
+     uploadDocument()
+
+     fetchData('http://18.206.147.162/api/v1/info/about/1/').then(about=>{
+          $('.about p')[0].innerHTML = about.introduction
+          $('.about p')[1].innerHTML = about.history
+          $('.about p')[2].innerHTML = about.mission
+
+     })
+
+</script>
+</body>
+</html>

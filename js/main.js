@@ -95,9 +95,8 @@ const uploadDocument = ()=>{
               contentType: 'multipart/form-data'
           }).then(async (response)=>{
                let result = await response.json();
-                showPopUp('signin')
-               localStorage.setItem('gokyo_key', result.key);
                if(response.status == 200){
+                    localStorage.setItem('gokyo_key', result.key);
                     fetch(`http://18.206.147.162/api/v1/api-auth/user/`, {
                          method: 'GET',
                          headers: {
@@ -106,11 +105,13 @@ const uploadDocument = ()=>{
                     }).then(res=>res.json()).then(user=>{
                          console.log(user)
                          localStorage.setItem('gokyo_user_id', user.pk);
+                         localStorage.setItem('gokyo_username', user.username);
                          window.location.href = `./profile.html?id=${user.pk}`
                     })
                } else{
                     $('.signin .message.error')[0].innerHTML="Please Check Your Ceredentials"
                     $('.signin .message.error').show()
+                    showPopUp('signin')
                     setTimeout(()=>{
                          $('.sign .message.error').hide()
                     },3000)
@@ -145,3 +146,50 @@ const uploadDocument = ()=>{
                }
           })
      })
+
+  function logout(){
+    localStorage.clear()
+    window.location.href = `./index.html`    
+  }
+  
+$(document).ready(function (){
+    if(localStorage.getItem('gokyo_key') && localStorage.getItem('gokyo_key')){
+      $('header .action').show()
+      $('header .menu .btn').hide()
+      $('header .action a')[0].innerHTML = localStorage.getItem('gokyo_username')
+      $('header .action .icon')[0].innerHTML = `${localStorage.getItem('gokyo_username')[0]}`
+    } else {
+      $('header .action').hide()
+    }
+})
+
+
+ async function fetchData(url){
+      let fetchedData = await fetch(url)
+      let result  = await fetchedData.json()
+      return result
+ }
+
+const setAbout = function(items){
+    $('.about-us p')[0].innerHTML=items[0].introduction
+}
+
+
+const setContact = function(items){
+    console.log(items)
+    $('.contact .details div span')[0].innerHTML = `Address: ${items[0].address}`
+    $('.contact .details div span')[1].innerHTML = `Phone: ${items[0].phone}, ${items[0].phone2}`
+    $('.contact .details div span')[2].innerHTML = `Email: ${items[0].email}`
+
+    $('.contact .social p a')[0].setAttribute('href', items[0].facebook_link)
+    $('.contact .social p a')[1].setAttribute('href', items[0].instagram_link)
+    $('.contact .social p a')[2].setAttribute('href', items[0].youtube_link)
+}
+
+
+ fetchData('http://18.206.147.162/api/v1/info/contact/').then(contact=>{
+      setContact(contact)
+ })
+ fetchData('http://18.206.147.162/api/v1/info/about/').then(about=>{
+      setAbout(about)
+ })
