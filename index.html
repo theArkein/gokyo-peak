@@ -20,11 +20,10 @@
           <nav class="flex hide">
               <ul class="menu">
                     <li><a class="active" href="#">Home</a></li>
-                    <li><a href="#">Flights</a></li>
-                    <li><a href="#">Vehicles</a></li>
-                    <li><a href="#">Rooms</a></li>
-                    <li><a href="#">Destinations</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#bookings" onclick="showForm(0, 'flights')">Flights</a></li>
+                    <li><a href="#bookings" onclick="showForm(2, 'vehicles')">Vehicles</a></li>
+                    <li><a href="#bookings" onclick="showForm(3, 'rooms')">Rooms</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="#" class="btn" onclick="showPopUp('signin')">Signin</a></li>
                     <li><a href="#" class="btn" onclick="showPopUp('signup')" style="background: var(--primary-light); color: #fff">Signup</a></li>
               </ul>
@@ -40,56 +39,191 @@
 
      <div class="banner-wrapper">
           <div class="banner owl-carousel">
-               <!-- <div class="">
-                    <img class="banner-image" style="background-image:url('./images/banner-a.jpg')" alt="">
-                    <div class="banner-details">
-                        <div class="title">
-                              You make your trip<br>
-                              We make your bookings
-                        </div>
-                        <p class="tag">Everything at one place.</p>
-                    </div>
-               </div>
-               <div class="">
-                    <img class="banner-image"  style="background-image:url('./images/sebastian-pena-lambarri-Wj9ELwGXa6c-unsplash.jpg')" alt="">
-                    <div class="banner-details">
-                         <div class="title">
-                               Get best offers<br>
-                               on Holiday Packs
-                         </div>
-                         <p class="tag">Starting from $999</p>
-                        <a href="#trending-trips" class="btn">See All</a>
-                     </div>
-               </div>
-               <div class="">
-                    <img class="banner-image" style="background-image:url('./images/angga-indratama-qiRJP7HSR9c-unsplash.jpg')" alt="">
-                    <div class="banner-details">
-                         <div class="title">
-                              Get best offers<br>
-                              on Activity Adventures
-                         </div>
-                         <p class="tag">Starting from $999</p>
-                        <a href="#exciting-adventures" class="btn">See All</a>
-                     </div>
-               </div> -->
+
           </div>
           <div class="dots"></div>
      </div>
+
+     <div id="bookings" style="position: relative;
+    top: -140px;"></div>
      
-     <section class="bookings  ">
+     <section class="bookings ">
           <div class="items flex">
                <div class="item active" onclick="showForm(0, 'flights')"><i class="fas fa-plane"></i><span>Flights</span></div>
-               <div class="item" onclick="showForm(1, 'vehicles')"><i class="fas fa-taxi"></i><span>Vehicles</span></div>
-               <div class="item" onclick="showForm(2, 'rooms')"><i class="fas fa-hotel"></i><span>Rooms</span></div>          
-               <div class="item" onclick="showForm(3, 'holidays')"><i class="fas fa-hiking"></i><span>Holidays</span></div>          
+               <div class="item" onclick="showForm(1, 'visas')"><i class="far fa-address-card"></i><span>Visas</span></div>
+               <div class="item" onclick="showForm(2, 'vehicles')"><i class="fas fa-car"></i><span>Vehicles</span></div>        
+               <div class="item" onclick="showForm(3, 'rooms')"><i class="fas fa-hotel"></i><span>Rooms</span></div>                
+
           </div>
           <div class="bookingForms">
+
                <div class="flights show">
-                    Flights
+                    <div class="enquiry_form">
+                         <form action="">
+                              <div class="wrap">
+                                   <label for="origin">Enter origin City</label>
+                                   <input type="text" id="origin" name="origin_city" placeholder="Dhangadhi, Kailali" required>
+                              </div>
+                              <div class="wrap">
+                                   <label for="origin">Enter destination City</label>
+                                   <input type="text" id="destination" name="destination_city" placeholder="Kathmandu, Nepal" required>
+                              </div>
+                              <div class="wrap">
+                                   <label for="origin">Enter departure date</label>
+                                   <input type="date" id="date" name="date" / >
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="origin">Number of travellers</label>
+                                   <input type="number" id="traveller_number" name="passengers" placeholder="4" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="email">Email</label>
+                                   <input type="email" id="email" placeholder="johnndoe@gmail.com" name="email" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="phone">Contact Number</label>
+                                   <input type="text" id="phone" placeholder="9809876543" name="contact_number" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <input type="submit" value="Make an enquiry">
+                              </div>
+                         </form>
+                    </div>
                </div>
-               <div class="vehicles">Vehicles</div>
-               <div class="rooms">Rooms</div>
-               <div class="holidays">holidays</div>
+
+               <div class="visas">
+                    <div class="enquiry_form">
+                         <form action="">
+                              <div class="wrap">
+                                   <label for="country">Country</label>
+                                   <input type="text" id="country" placeholder="Thailand" name="country" required>
+                              </div>
+                              <div class="wrap">
+                                   <label for="entry_date">Date of Entry</label>
+                                   <input type="date" id="entry_date" name="date_of_entry" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="entry_date">Date of Exit</label>
+                                   <input type="date" id="entry_date" name="date_of_exit" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="nationality">Nationality</label>
+                                   <input type="text" id="nationality" placeholder="Nepali" name="nationality" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="email">Email</label>
+                                   <input type="email" id="email" placeholder="johnndoe@gmail.com" name="email" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="phone">Contact Number</label>
+                                   <input type="text" id="phone" placeholder="9809876543" name="contact_number" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <input type="submit" value="Make an enquiry">
+                              </div>
+                         </form>
+                    </div>
+               </div>
+
+               <div class="vehicles">
+                    <div class="enquiry_form">
+                         <form action="">
+                              <div class="wrap">
+                                   <label for="traveller_number">Number of Persons</label>
+                                   <input type="number" id="traveller_number" name="travellers" placeholder="6" required>
+                              </div>
+                              <div class="wrap">
+                                   <label for="entry_date">Book For</label>
+                                   <input type="date" id="entry_date" name="booked_for" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="vehicle_type">Vehicle Type</label>
+                                   <select id="vehicle_type" name="vehicle_type" >
+                                        <option value="premium">Premium</option>
+                                        <option value="standard">Standard</option>
+                                        <option value="budger">Budget</option>
+
+                                   </select>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="book_duration">Book Duration</label>
+                                   <input type="text" id="book_duration" placeholder="2 Days 5 hours" name="book_duration" required>
+                              </div>
+
+
+                              <div class="wrap">
+                                   <label for="email">Email</label>
+                                   <input type="email" id="email" placeholder="johnndoe@gmail.com" name="email" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="phone">Contact Number</label>
+                                   <input type="text" id="phone" placeholder="9809876543" name="contact_number" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <input type="submit" value="Make an enquiry">
+                              </div>
+                         </form>
+                    </div>
+               </div>
+
+               <div class="rooms">
+                    <div class="enquiry_form">
+                         <form action="">
+                              <div class="wrap">
+                                   <label for="guestsr">Number of Persons</label>
+                                   <input type="number" id="guests" name="guests" placeholder="6" required>
+                              </div>
+                              <div class="wrap">
+                                   <label for="entry_date">Book For</label>
+                                   <input type="date" id="entry_date" name="booked_date" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="room_type">Room Type</label>
+                                   <select id="vehicle_type" name="room_type" >
+                                        <option value="premium">Premium</option>
+                                        <option value="standard">Standard</option>
+                                        <option value="budger">Budget</option>
+
+                                   </select>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="duration">Book Duration</label>
+                                   <input type="text" id="duration" placeholder="2 Days 5 hours" name="duration" required>
+                              </div>
+
+
+                              <div class="wrap">
+                                   <label for="email">Email</label>
+                                   <input type="email" id="email" placeholder="johnndoe@gmail.com" name="email" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <label for="phone">Contact Number</label>
+                                   <input type="text" id="phone" placeholder="9809876543" name="contact" required>
+                              </div>
+
+                              <div class="wrap">
+                                   <input type="submit" value="Make an enquiry">
+                              </div>
+                         </form>
+                    </div>
+               </div>
+
           </div>
      </section>
     <!--  <section class="hot-deals">
@@ -715,6 +849,15 @@
           </section>
      </div>
 
+     <div class="pop-up enquired">
+          <section class="enquiry-success-popup">
+                  <div class="close" onclick="hidePopUp('enquired')">X</div>
+                  <h3>Thankyou</h3>
+                  <span>Your enquiry is registered.</span>
+                  <span class="alternate">You will be contacted soon.</span>
+          </section>
+     </div>
+
      <div class="pop-up spinner">
           <img src="./images/spinner.svg" alt="">           
      </div>
@@ -849,7 +992,6 @@
                          <div class="price">Nrs. ${package.price || package.discounted_price}</div>
                     </div>
                     <div class="back">
-                        <p class="description">${package.description}!</p>
                          <a href="package.html?id=${package.id}" class='btn'>Book Now</a>
                     </div>
                </div>`
@@ -942,21 +1084,21 @@
           $('.trending-trips .section-title')[0].innerHTML = `Exciting ${sliders.slider3}`
 
 
-          fetchData(`http://18.206.147.162/api/v1/info/slider/packages/?category=activity`).then(packages=>{
+          fetchData(`http://18.206.147.162/api/v1/packages/search/?category=${sliders.slider1}`).then(packages=>{
                if(packages.length)
                     setSlider1(packages)
                else
                     $('.popular-destinations')[0].remove()
           })
 
-          fetchData(`http://18.206.147.162/api/v1/info/slider/packages/?category=activity`).then(packages=>{
+          fetchData(`http://18.206.147.162/api/v1/packages/search/?category=${sliders.slider2}`).then(packages=>{
                if(packages.length)
                     setSlider2(packages)
                else
                     $('.exciting-adventures')[0].remove()
           })
 
-          fetchData(`http://18.206.147.162/api/v1/info/slider/packages/?category=activity`).then(packages=>{
+          fetchData(`http://18.206.147.162/api/v1/packages/search/?category=${sliders.slider3}`).then(packages=>{
                if(packages.length)
                     setSlider3(packages)
                else
@@ -965,6 +1107,77 @@
      })     
      
 
+     $('.flights .enquiry_form form').submit((e)=>{
+          e.preventDefault()
+          showPopUp('spinner')
+          let formData = new FormData($('.flights .enquiry_form form')[0]);
+          const url = `http://18.206.147.162/api/v1/info/flights/`
+          fetch(url, {
+              method: 'POST',
+              body: formData,
+          }).then(async (response)=>{
+               let result = await response.json();
+               if(response.status == 201){
+                    showPopUp('enquired')
+               } else{
+                    console.log(result)
+               }
+          })
+     })
+
+     $('.vehicles .enquiry_form form').submit((e)=>{
+          e.preventDefault()
+          showPopUp('spinner')
+          let formData = new FormData($('.vehicles .enquiry_form form')[0]);
+          const url = `http://18.206.147.162/api/v1/info/vehicles/`
+          fetch(url, {
+              method: 'POST',
+              body: formData,
+          }).then(async (response)=>{
+               let result = await response.json();
+               if(response.status == 201){
+                    showPopUp('enquired')
+               } else{
+                    console.log(result)
+               }
+          })
+     })
+
+     $('.visas .enquiry_form form').submit((e)=>{
+          e.preventDefault()
+          showPopUp('spinner')
+          let formData = new FormData($('.visas .enquiry_form form')[0]);
+          const url = `http://18.206.147.162/api/v1/info/visas/`
+          fetch(url, {
+              method: 'POST',
+              body: formData,
+          }).then(async (response)=>{
+               let result = await response.json();
+               if(response.status == 201){
+                    showPopUp('enquired')
+               } else{
+                    console.log(result)
+               }
+          })
+     })
+
+     $('.rooms .enquiry_form form').submit((e)=>{
+          e.preventDefault()
+          showPopUp('spinner')
+          let formData = new FormData($('.rooms .enquiry_form form')[0]);
+          const url = `http://18.206.147.162/api/v1/info/rooms/`
+          fetch(url, {
+              method: 'POST',
+              body: formData,
+          }).then(async (response)=>{
+               let result = await response.json();
+               if(response.status == 201){
+                    showPopUp('enquired')
+               } else{
+                    console.log(result)
+               }
+          })
+     })
 
 </script>
 <script>

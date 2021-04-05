@@ -7,7 +7,7 @@ hamburger.onclick = ()=>{
 
 const showForm = (tab,name)=>{
      const forms = document.querySelectorAll('.bookingForms>div')
-     const newForm = document.querySelector('.'+name)
+     const newForm = document.querySelector('.bookingForms .'+name)
      document.querySelectorAll('.item').forEach(item=>{
           item.classList.remove('active')
      })
