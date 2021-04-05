@@ -261,16 +261,10 @@ header .menu a{
 }
 .bookingForms {
      padding: 10px 20px;
-     border: 1px solid #eee;
+     border: 1px solid #aaa;
 }
 .bookings .bookingForms>div{
      display: none;
-}
-.bookings .bookingForms>div{
-     color: var(--primary);
-     font-size: 2em;
-     text-align: center;
-     font-weight: bold;
 }
 .bookings .bookingForms>div.show{
      display: block;
@@ -1165,4 +1159,41 @@ section.about{
 
 section.about .section-title{
      font-size: 2em;
+}
+
+.enquiry_form form{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: flex-end;
+     justify-content: flex-start;
+     padding: 24px 24px 0px;
+}
+
+.enquiry_form form .wrap{
+     display: flex;
+     margin-bottom: 12px;
+     margin-right: 12px;
+     width: 200px;
+     flex-direction: column;
+}
+.enquiry_form form label{
+     font-size: 12px;
+     font-weight: bold;
+     margin-bottom: 10px;
+}
+
+.enquiry_form form .wrap input {
+     height: 20px;
+     display: flex;
+     align-items: center;
+}
+
+.enquiry_form form .wrap input[type=submit] {
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: var(--primary);
+     border-radius: 4px;
+     font-size: 14px
 }
